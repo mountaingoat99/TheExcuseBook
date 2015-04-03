@@ -29,7 +29,7 @@ public class SportsModel {
         return sportName;
     }
 
-    public void setSportName(String sportName) {
-        this.sportName = sportName;
+    public String setSportName(String sportName) {
+       return this.sportName = sportName;
     }
 }

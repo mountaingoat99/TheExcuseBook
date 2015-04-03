@@ -265,5 +265,114 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex109 = new ExcuseModel(10, "");
         ExcuseModel ex110 = new ExcuseModel(10, "");
 
+        createExcuses(ex1, db);
+        createExcuses(ex2, db);
+        createExcuses(ex3, db);
+        createExcuses(ex4, db);
+        createExcuses(ex5, db);
+        createExcuses(ex6, db);
+        createExcuses(ex7, db);
+        createExcuses(ex8, db);
+        createExcuses(ex9, db);
+        createExcuses(ex10, db);
+
+        createExcuses(ex11, db);
+        createExcuses(ex12, db);
+        createExcuses(ex13, db);
+        createExcuses(ex14, db);
+        createExcuses(ex15, db);
+        createExcuses(ex16, db);
+        createExcuses(ex17, db);
+        createExcuses(ex18, db);
+        createExcuses(ex19, db);
+        createExcuses(ex20, db);
+
+        createExcuses(ex21, db);
+        createExcuses(ex22, db);
+        createExcuses(ex23, db);
+        createExcuses(ex24, db);
+        createExcuses(ex25, db);
+        createExcuses(ex26, db);
+        createExcuses(ex27, db);
+        createExcuses(ex28, db);
+        createExcuses(ex29, db);
+        createExcuses(ex30, db);
+
+        createExcuses(ex41, db);
+        createExcuses(ex42, db);
+        createExcuses(ex43, db);
+        createExcuses(ex44, db);
+        createExcuses(ex45, db);
+        createExcuses(ex46, db);
+        createExcuses(ex47, db);
+        createExcuses(ex48, db);
+        createExcuses(ex49, db);
+        createExcuses(ex50, db);
+
+        createExcuses(ex51, db);
+        createExcuses(ex52, db);
+        createExcuses(ex53, db);
+        createExcuses(ex54, db);
+        createExcuses(ex55, db);
+        createExcuses(ex56, db);
+        createExcuses(ex57, db);
+        createExcuses(ex58, db);
+        createExcuses(ex59, db);
+        createExcuses(ex60, db);
+
+        createExcuses(ex61, db);
+        createExcuses(ex62, db);
+        createExcuses(ex63, db);
+        createExcuses(ex64, db);
+        createExcuses(ex65, db);
+        createExcuses(ex66, db);
+        createExcuses(ex67, db);
+        createExcuses(ex68, db);
+        createExcuses(ex69, db);
+        createExcuses(ex70, db);
+
+        createExcuses(ex71, db);
+        createExcuses(ex72, db);
+        createExcuses(ex73, db);
+        createExcuses(ex74, db);
+        createExcuses(ex75, db);
+        createExcuses(ex76, db);
+        createExcuses(ex77, db);
+        createExcuses(ex78, db);
+        createExcuses(ex79, db);
+        createExcuses(ex80, db);
+
+        createExcuses(ex81, db);
+        createExcuses(ex82, db);
+        createExcuses(ex83, db);
+        createExcuses(ex84, db);
+        createExcuses(ex85, db);
+        createExcuses(ex86, db);
+        createExcuses(ex87, db);
+        createExcuses(ex88, db);
+        createExcuses(ex89, db);
+        createExcuses(ex90, db);
+
+        createExcuses(ex91, db);
+        createExcuses(ex92, db);
+        createExcuses(ex93, db);
+        createExcuses(ex94, db);
+        createExcuses(ex95, db);
+        createExcuses(ex96, db);
+        createExcuses(ex97, db);
+        createExcuses(ex98, db);
+        createExcuses(ex99, db);
+        createExcuses(ex100, db);
+
+        createExcuses(ex101, db);
+        createExcuses(ex102, db);
+        createExcuses(ex103, db);
+        createExcuses(ex104, db);
+        createExcuses(ex105, db);
+        createExcuses(ex106, db);
+        createExcuses(ex107, db);
+        createExcuses(ex108, db);
+        createExcuses(ex109, db);
+        createExcuses(ex110, db);
     }
 }

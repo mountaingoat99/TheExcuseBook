@@ -39,7 +39,7 @@ public class ExcuseModel {
         return excuseName;
     }
 
-    public void setExcuseName(String excuseName) {
-        this.excuseName = excuseName;
+    public String setExcuseName(String excuseName) {
+        return this.excuseName = excuseName;
     }
 }
