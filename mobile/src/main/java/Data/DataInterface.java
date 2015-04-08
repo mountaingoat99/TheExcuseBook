@@ -46,7 +46,7 @@ public class DataInterface extends DatabaseHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
 
-        if(c.moveToFirst()) {
+        if(c.moveToFirst()) {              // TODO this needs to loop through each excuse
             do{
                 excuse.put(c.getInt(0), c.getString(1));
             } while (c.moveToNext());

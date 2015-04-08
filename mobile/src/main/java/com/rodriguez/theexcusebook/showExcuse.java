@@ -4,36 +4,37 @@ import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.Toast;
-import android.widget.Toolbar;
+import android.widget.TextView;
 
+import Controllers.ExcuseController;
 import Utilities.ShakeEventListener;
 
-public class ExcuseMe extends ActionBarActivity {
 
-    private Button btnExcuseMe;
+public class showExcuse extends ActionBarActivity {
+
+    private TextView txtShowExcuse;
     private SensorManager mSensorManager;
     private ShakeEventListener mSensorListener;
-    private int sportId = 1;
+    private int sportId;
+    private String showExcuse = null;
     private final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_excuse_me);
+        setContentView(R.layout.activity_show_excuse);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        btnExcuseMe = (Button)findViewById(R.id.btnExcuseMe);
+        txtShowExcuse = (TextView)findViewById(R.id.txtExcuse);
 
-        addListenerOnButton();
+        Bundle b = getIntent().getExtras();
+        if(b != null){
+            sportId = b.getInt("sportId");
+        }
 
         //shake event
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -42,14 +43,13 @@ public class ExcuseMe extends ActionBarActivity {
         mSensorListener.setOnShakeListener(new ShakeEventListener.OnShakeListener() {
 
             public void onShake() {
-                Intent intent  = new Intent(context, showExcuse.class);
-                Bundle b = new Bundle();
-                b.putInt("sportId", sportId);
-                intent.putExtras(b);
-                startActivity(intent);
+                NewExcuse();
             }
         });
+
+        NewExcuse();
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -64,42 +64,30 @@ public class ExcuseMe extends ActionBarActivity {
         super.onPause();
     }
 
-    private void addListenerOnButton() {
-        btnExcuseMe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent  = new Intent(context, showExcuse.class);
-                Bundle b = new Bundle();
-                b.putInt("sportId", sportId);
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        });
+    private void NewExcuse() {
+        ExcuseController ec = new ExcuseController();
+        showExcuse = ec.FindExcuse(sportId, context);
+        txtShowExcuse.setText(showExcuse);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_excuse_me, menu);
+        //getMenuInflater().inflate(R.menu.menu_show_excuse, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            case R.id.change_sport:
-                //TODO show change dialog
-                break;
-            case R.id.add_excuses:
-                //TODO show Add dialog
-                break;
-            case R.id.contact:
-                //TODO show contact
-                break;
-        }
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

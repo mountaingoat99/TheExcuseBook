@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".showExcuse"
+            android:label="@string/title_activity_show_excuse"
+            android:parentActivityName=".ExcuseMe" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rodriguez.theexcusebook.ExcuseMe" />
+        </activity>
     </application>
 
 </manifest>
