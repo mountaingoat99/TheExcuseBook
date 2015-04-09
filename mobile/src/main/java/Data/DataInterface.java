@@ -35,6 +35,29 @@ public class DataInterface extends DatabaseHelper {
         return sport;
     }
 
+    // select List of Excuses by sport
+    public List<String> ExcuseList(int sportid) {
+        List<String> excuse = new ArrayList<>();
+
+        String selectQuery = "SELECT " + getKeyId() + ", " + getExcuseName()
+                + " FROM " + getExcuses()
+                + " WHERE " + getSportId() + "=" + sportid;
+        Log.e(getLog(), selectQuery);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if (c.moveToFirst()) {
+            do{
+                ExcuseModel s = new ExcuseModel();
+                excuse.add(s.setExcuseName(c.getString(c.getColumnIndex(getExcuseName()))));
+            } while (c.moveToNext());
+        }
+        c.close();
+        db.close();
+        return excuse;
+    }
+
+    // may not use this
     // select Dictionary of Excuses by Sport
     public Hashtable<Integer,String> ExcuseListBySport(int sportid){
         Hashtable<Integer, String> excuse = new Hashtable<>();

@@ -112,7 +112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void createExcuses(ExcuseModel excuse, SQLiteDatabase db){
 
         ContentValues values = new ContentValues();
-        values.put(KEY_ID, excuse.getSportId());
+        //values.put(KEY_ID, excuse.getExcuseId());
         values.put(SPORT_ID, excuse.getSportId());
         values.put(EXCUSE_NAME, excuse.getExcuseName());
 
@@ -153,7 +153,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex5 = new ExcuseModel(1, "I didn't Pre-Ride");
         ExcuseModel ex6 = new ExcuseModel(1, "My car is a manual, and I had to work the clutch");
         ExcuseModel ex7 = new ExcuseModel(1, "I didn't have tubeless");
-        ExcuseModel ex8 = new ExcuseModel(1, "I over-trained");
+        ExcuseModel ex8 = new ExcuseModel(1,"I over-trained");
         ExcuseModel ex9 = new ExcuseModel(1, "I under-trained");
         ExcuseModel ex10 = new ExcuseModel(1, "Saddle was 1 cm too high");
 
