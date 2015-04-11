@@ -7,6 +7,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class DataInterface extends DatabaseHelper {
@@ -77,6 +78,27 @@ public class DataInterface extends DatabaseHelper {
         c.close();
         db.close();
         return excuse;
+    }
+
+    // select the list of sports and the ID's
+    public LinkedHashMap<Integer, String> ExcuseSports() {
+        LinkedHashMap<Integer, String> sports = new LinkedHashMap<>();
+
+        String selectQuery = "SELECT " + getKeyId() + ", " + getSportName()
+                  + " FROM " + getSports();
+
+        Log.e(getLog(), selectQuery);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if(c.moveToFirst()) {
+            do {
+                sports.put(c.getInt(0), c.getString(1));
+            } while (c.moveToNext());
+        }
+        c.close();
+        db.close();
+        return sports;
     }
 
     // Insert new Excuse record by sport
