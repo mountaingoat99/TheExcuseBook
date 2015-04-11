@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,10 +19,12 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import Controllers.DefaultController;
 import Data.DataInterface;
 import Utilities.OnSpinnerItemClicked;
 import Utilities.ShakeEventListener;
@@ -29,6 +32,7 @@ import Utilities.ShakeEventListener;
 public class ExcuseMe extends ActionBarActivity {
 
     private Button btnExcuseMe;
+    private TextView txtSportName;
     private SensorManager mSensorManager;
     private ShakeEventListener mSensorListener;
     public static int sportId = 0;
@@ -40,8 +44,9 @@ public class ExcuseMe extends ActionBarActivity {
         setContentView(R.layout.activity_excuse_me);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         btnExcuseMe = (Button)findViewById(R.id.btnExcuseMe);
+        txtSportName = (TextView)findViewById(R.id.txtSportName);
 
-        //loadSavedPreference();
+        checkDefaultSport(context);
         addListenerOnButton();
 
         //shake event
@@ -60,23 +65,10 @@ public class ExcuseMe extends ActionBarActivity {
         });
     }
 
-    private void loadSavedPreference() {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        sportId = sp.getInt("sportId", sportId);
-        if(sportId > 1){
-            // TODO set the sport
-        } else {
-            // TODO set the default to cycling
-        }
-    }
-
-    public void savePreferences(String key, int value){
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putInt(key, value);
-        editor.apply();
-
-        loadSavedPreference();
+    public void checkDefaultSport(Context context) {
+        sportId = DefaultController.DefaultSport(context);
+        Log.e("Default Sport is", String.valueOf(sportId));
+        txtSportName.setText(String.valueOf(sportId));
     }
 
     @Override
@@ -125,14 +117,11 @@ public class ExcuseMe extends ActionBarActivity {
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.dialog_update_sport);
                 final Spinner chooseDiveSpinner = (Spinner)dialog.findViewById(R.id.spinnerChooseSport);
-
-                chooseDiveSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
+                chooseDiveSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked(dialog, sportId, this));
 
                 DataInterface d = new DataInterface(this);
                 LinkedHashMap<Integer, String> sports = d.ExcuseSports();
-
                 ArrayList<String> sportName = new ArrayList<>(sports.values());
-
 
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
                         R.layout.spinner_item, sportName);

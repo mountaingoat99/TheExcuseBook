@@ -17,15 +17,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Table names
     protected static final String SPORTS_TABLE = "sports";
     protected static final String EXCUSES_TABLE = "excuses";
+    protected static final String DEFAULT_SPORT_TABLE = "default_sport";
 
     // common column names
     protected static final String KEY_ID = "id";
 
     // Sports column names
     protected static final String SPORT_NAME = "sport_name";
+
     // Excuse column names
     protected static final String SPORT_ID = "sport_id";
     protected static final String EXCUSE_NAME = "excuse_name";
+
+    // default sport column names
+    protected static final String DEFAULT_ID = "default_id";
 
     public static String getLog() {
         return LOG;
@@ -41,6 +46,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static String getExcuses() {
         return EXCUSES_TABLE;
+    }
+
+    public static String getDEFAULT_SPORT_TABLE() {
+        return DEFAULT_SPORT_TABLE;
     }
 
     public static String getKeyId() {
@@ -59,6 +68,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return EXCUSE_NAME;
     }
 
+    public static String getDEFAULT_ID() {
+        return DEFAULT_ID;
+    }
+
     // create tables
     public static final String CREATE_TABLE_SPORTS = "CREATE TABLE IF NOT EXISTS "
             + SPORTS_TABLE + "(" + KEY_ID + " INTEGER PRIMARY KEY, "
@@ -69,6 +82,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + SPORT_ID + " INTEGER, " + EXCUSE_NAME + " TEXT "
             + ")";
 
+    public static final String CREATE_TABLE_DEFAULT_SPORT = "CREATE TABLE IF NOT EXISTS "
+            + DEFAULT_SPORT_TABLE + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + DEFAULT_ID + " INTEGER " + ")";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -80,11 +96,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // create the tables
         db.execSQL(CREATE_TABLE_SPORTS);
         db.execSQL(CREATE_TABLE_EXCUSES);
+        db.execSQL(CREATE_TABLE_DEFAULT_SPORT);
 
         // fill the tables
         fillSports(db);
         fillExcuses(db);
-
+        fillDefault(db);
     }
 
     @Override
@@ -112,11 +129,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void createExcuses(ExcuseModel excuse, SQLiteDatabase db){
 
         ContentValues values = new ContentValues();
-        //values.put(KEY_ID, excuse.getExcuseId());
         values.put(SPORT_ID, excuse.getSportId());
         values.put(EXCUSE_NAME, excuse.getExcuseName());
 
         db.insert(EXCUSES_TABLE, null, values);
+    }
+
+    public void createDefault(DefaultModel d, SQLiteDatabase db){
+
+        ContentValues values = new ContentValues();
+        values.put(DEFAULT_ID, d.getDefaultID());
+
+        db.insert(DEFAULT_SPORT_TABLE, null, values);
+    }
+
+    private void fillDefault(SQLiteDatabase db) {
+
+        DefaultModel d = new DefaultModel(1);
+
+        createDefault(d, db);
     }
 
     private void fillSports(SQLiteDatabase db){

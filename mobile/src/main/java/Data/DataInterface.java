@@ -104,7 +104,6 @@ public class DataInterface extends DatabaseHelper {
     // Insert new Excuse record by sport
     public void AddExcuse(String excuseName, int sportId){
         SQLiteDatabase db = this.getWritableDatabase();
-
         ExcuseModel excuse = new ExcuseModel(sportId, excuseName);
         createExcuses(excuse, db);
         db.close();
@@ -115,9 +114,40 @@ public class DataInterface extends DatabaseHelper {
         String selectQuery = "UPDATE " + getExcuses()
                 + " SET " + getExcuseName() + "='" + name + "' WHERE "
                 + getKeyId() + "=" + id;
+        Log.e(getLog(), selectQuery);
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(selectQuery);
         db.close();
     }
 
+    // check the default_sport
+    public int DefaultSport() {
+        int sportid = 0;
+        String selectQuery = "SELECT " + getDEFAULT_ID()
+                + " FROM " + getDEFAULT_SPORT_TABLE()
+                + " WHERE " + getKeyId() + "=1";
+        Log.e(getLog(), selectQuery);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if(c.moveToFirst()) {
+            do {
+                sportid = c.getInt(0);
+            } while (c.moveToNext());
+        }
+        c.close();
+        db.close();
+        return sportid;
+    }
+
+    // update the default id
+    public void UpdateDefaultSport(int sportid){
+        String selectQuery = "UPDATE " + getDEFAULT_SPORT_TABLE()
+                + " SET " + getDEFAULT_ID() + "='" + sportid + "' WHERE "
+                + getKeyId() + "=1";
+        Log.e(getLog(), selectQuery);
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(selectQuery);
+        db.close();
+    }
 }

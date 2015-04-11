@@ -17,5 +17,16 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:id="@+id/txtSportName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnExcuseMe"
+        android:layout_marginTop="8dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/secondary_text"/>
+
 </RelativeLayout>
 

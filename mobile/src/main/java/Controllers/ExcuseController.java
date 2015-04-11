@@ -2,15 +2,11 @@ package Controllers;
 
 import android.content.Context;
 
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
 
 import Data.DataInterface;
 
-/**
- * Created by Jeremey on 4/7/2015.
- */
 public class ExcuseController {
 
     public String FindExcuse(int sportId, Context context) {
