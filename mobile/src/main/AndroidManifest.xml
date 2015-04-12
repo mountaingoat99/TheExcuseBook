@@ -24,6 +24,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rodriguez.theexcusebook.ExcuseMe" />
         </activity>
+        <activity
+            android:name=".ChangeSport"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:label="@string/title_activity_change_sport"
+            android:parentActivityName=".ExcuseMe" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rodriguez.theexcusebook.ExcuseMe" />
+        </activity>
     </application>
 
 </manifest>

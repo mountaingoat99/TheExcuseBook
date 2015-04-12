@@ -9,5 +9,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="choose_sport">Choose Sport</string>
+    <string name="title_activity_change_sport">Change Sport</string>
 
 </resources>

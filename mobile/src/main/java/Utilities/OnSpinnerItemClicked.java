@@ -25,10 +25,10 @@ public class OnSpinnerItemClicked implements AdapterView.OnItemSelectedListener 
     @Override
     public void onItemSelected(AdapterView<?> parent,
                                View view, int pos, long id) {
-        Toast.makeText(parent.getContext(), "Clicked : " +
-                parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(parent.getContext(), "Clicked : " +
+//                parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
 
-        ExcuseMe.sportId = pos + 1;
+        ExcuseMe.sportId = pos;
         DataInterface di = new DataInterface(_context);
         ExcuseMe em = new ExcuseMe();
 
