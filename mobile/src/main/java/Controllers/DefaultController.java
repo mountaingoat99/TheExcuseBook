@@ -11,4 +11,10 @@ public class DefaultController {
         DataInterface di = new DataInterface(context);
         return di.DefaultSport();
     }
+
+    public static String DefaultSportName(int sportid, Context context) {
+
+        DataInterface di = new DataInterface(context);
+        return di.DefaultSportName(sportid);
+    }
 }

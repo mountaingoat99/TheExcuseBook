@@ -11,5 +11,6 @@
     <string name="choose_sport">Choose Sport</string>
     <string name="title_activity_change_sport">Change Sport</string>
     <string name="update_sport">Update Sport</string>
+    <string name="add_sport">Add Sport</string>
 
 </resources>

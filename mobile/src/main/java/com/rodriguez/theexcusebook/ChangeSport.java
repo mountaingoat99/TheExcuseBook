@@ -54,7 +54,9 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
             @Override
             public void onClick(View view) {
                 DataInterface di = new DataInterface(context);
-                di.UpdateDefaultSport(sportId);
+                if (sportId > 0) {
+                    di.UpdateDefaultSport(sportId);
+                }
                 Intent intent = new Intent(context, ExcuseMe.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -75,7 +77,7 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
                 R.layout.spinner_item, sportName);
 
-        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         arrayAdapter.insert(" Choose a Default Sport", 0);
         chooseDiveSpinner.setAdapter(arrayAdapter);
     }

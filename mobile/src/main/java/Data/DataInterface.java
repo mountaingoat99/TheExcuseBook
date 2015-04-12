@@ -109,15 +109,42 @@ public class DataInterface extends DatabaseHelper {
         db.close();
     }
 
-    // Update Excuse record
-    public void EditExcuse(int id, String name){
-        String selectQuery = "UPDATE " + getExcuses()
-                + " SET " + getExcuseName() + "='" + name + "' WHERE "
-                + getKeyId() + "=" + id;
-        Log.e(getLog(), selectQuery);
+    // Insert New Sport
+    public void AddSport(String sportName){
+        String newSportExcuse = "I've never liked this sport anyway";
+
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL(selectQuery);
+        SportsModel sport = new SportsModel(sportName);
+        createSports(sport, db);
+
+        // get the new sportid
+        int sportID = newSportId(sportName);
+
+        // add one default excuse for the sport here
+        // I've never liked this sport anyway
+        ExcuseModel excuse = new ExcuseModel(sportID, newSportExcuse);
+        createExcuses(excuse, db);
         db.close();
+    }
+
+    // get the new sportID
+    public int newSportId(String newSportName) {
+        int sportid = 0;
+        String selectQuery = "SELECT " + getKeyId()
+                + " FROM " + getSports()
+                + " WHERE " + getSportName() + "='" + newSportName + "'";
+        Log.e(getLog(), selectQuery);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if(c.moveToFirst()) {
+            do {
+                sportid = c.getInt(0);
+            } while (c.moveToNext());
+        }
+        c.close();
+        db.close();
+        return sportid;
     }
 
     // check the default_sport
@@ -138,6 +165,26 @@ public class DataInterface extends DatabaseHelper {
         c.close();
         db.close();
         return sportid;
+    }
+
+    public String DefaultSportName(int sportid){
+        String sportName = null;
+        String selectQuery = "SELECT " + getSportName()
+                + " FROM " + getSports()
+                + " WHERE " + getKeyId() + "=" + sportid;
+
+        Log.e(getLog(), selectQuery);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if(c.moveToFirst()) {
+            do {
+                sportName = c.getString(0);
+            } while (c.moveToNext());
+        }
+        c.close();
+        db.close();
+        return sportName;
     }
 
     // update the default id

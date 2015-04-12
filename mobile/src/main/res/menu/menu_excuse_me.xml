@@ -13,9 +13,14 @@
         android:orderInCategory="200"
         app:showAsAction="collapseActionView" />
 
+    <item android:id="@+id/add_sport"
+        android:title="@string/add_sport"
+        android:orderInCategory="300"
+        app:showAsAction="collapseActionView" />
+
     <item android:id="@+id/contact"
         android:title="@string/contact"
-        android:orderInCategory="300"
+        android:orderInCategory="400"
         app:showAsAction="collapseActionView" />
 
 </menu>

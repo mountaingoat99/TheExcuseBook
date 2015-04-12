@@ -26,6 +26,7 @@ public class ExcuseMe extends ActionBarActivity {
     private SensorManager mSensorManager;
     private ShakeEventListener mSensorListener;
     public static int sportId = 0;
+    public static String sportName = "";
     private final Context context = this;
 
     @Override
@@ -57,8 +58,10 @@ public class ExcuseMe extends ActionBarActivity {
 
     public void checkDefaultSport() {
         sportId = DefaultController.DefaultSport(context);
-        Log.e("Default Sport is", String.valueOf(sportId));
-        txtSportName.setText(String.valueOf(sportId));
+        sportName = DefaultController.DefaultSportName(sportId, context);
+        Log.e("Default SportID is", String.valueOf(sportId));
+        Log.e("Default SportName is", sportName);
+        txtSportName.setText(sportName);
     }
 
     @Override
@@ -108,6 +111,9 @@ public class ExcuseMe extends ActionBarActivity {
                 break;
             case R.id.add_excuses:
                 //TODO show Add dialog
+                break;
+            case R.id.add_sport:
+                //TODO show add sport dialog
                 break;
             case R.id.contact:
                 //TODO show contact
