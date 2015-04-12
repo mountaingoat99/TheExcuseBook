@@ -3,10 +3,8 @@ package com.rodriguez.theexcusebook;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,19 +12,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-
 import Controllers.DefaultController;
-import Data.DataInterface;
-import Utilities.OnSpinnerItemClicked;
 import Utilities.ShakeEventListener;
 
 public class ExcuseMe extends ActionBarActivity {
@@ -46,7 +36,7 @@ public class ExcuseMe extends ActionBarActivity {
         btnExcuseMe = (Button)findViewById(R.id.btnExcuseMe);
         txtSportName = (TextView)findViewById(R.id.txtSportName);
 
-        checkDefaultSport(context);
+        checkDefaultSport();
         addListenerOnButton();
 
         //shake event
@@ -65,7 +55,7 @@ public class ExcuseMe extends ActionBarActivity {
         });
     }
 
-    public void checkDefaultSport(Context context) {
+    public void checkDefaultSport() {
         sportId = DefaultController.DefaultSport(context);
         Log.e("Default Sport is", String.valueOf(sportId));
         txtSportName.setText(String.valueOf(sportId));
@@ -113,26 +103,8 @@ public class ExcuseMe extends ActionBarActivity {
                 return true;
             case R.id.change_sport:
                 //TODO show change dialog
-                final Dialog dialog = new Dialog(context);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.dialog_update_sport);
-                final Spinner chooseDiveSpinner = (Spinner)dialog.findViewById(R.id.spinnerChooseSport);
-                chooseDiveSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked(dialog, sportId, this));
-
-                DataInterface d = new DataInterface(this);
-                LinkedHashMap<Integer, String> sports = d.ExcuseSports();
-                ArrayList<String> sportName = new ArrayList<>(sports.values());
-
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
-                        R.layout.spinner_item, sportName);
-
-                arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-                arrayAdapter.insert(" Choose a Default Sport", 0);
-                chooseDiveSpinner.setAdapter(arrayAdapter);
-
-                dialog.show();
-                dialog.setCanceledOnTouchOutside(true);
-
+                Intent intent = new Intent(context, ChangeSport.class);
+                startActivity(intent);
                 break;
             case R.id.add_excuses:
                 //TODO show Add dialog

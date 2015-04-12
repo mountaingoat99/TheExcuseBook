@@ -26,7 +26,7 @@
         </activity>
         <activity
             android:name=".ChangeSport"
-            android:theme="@style/Theme.AppCompat.Dialog"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
             android:label="@string/title_activity_change_sport"
             android:parentActivityName=".ExcuseMe" >
             <meta-data

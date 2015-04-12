@@ -1,8 +1,11 @@
 package com.rodriguez.theexcusebook;
 
 import android.app.ActionBar;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,17 +13,22 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import Controllers.DefaultController;
 import Data.DataInterface;
 
 
 public class ChangeSport extends ActionBarActivity implements AdapterView.OnItemSelectedListener{
 
-    int sportId = 0;
+    int sportId;
+    private Spinner chooseDiveSpinner;
+    private Button btnUpdateSport;
+    final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +38,36 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        chooseDiveSpinner = (Spinner)findViewById(R.id.spinnerChooseSport);
+        btnUpdateSport = (Button)findViewById(R.id.btnUpdateSport);
 
-        Spinner chooseDiveSpinner = (Spinner)findViewById(R.id.spinnerChooseSport);
         chooseDiveSpinner.setOnItemSelectedListener(this);
 
+        SetSpinnerData();
+        checkDefaultSport();
+        addListenerOnButton();
+    }
+
+    private void addListenerOnButton() {
+        btnUpdateSport.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                DataInterface di = new DataInterface(context);
+                di.UpdateDefaultSport(sportId);
+                Intent intent = new Intent(context, ExcuseMe.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void checkDefaultSport() {
+        sportId = DefaultController.DefaultSport(this);
+        Log.e("Default Sport is", String.valueOf(sportId));
+    }
+
+    private void SetSpinnerData() {
         DataInterface d = new DataInterface(this);
         LinkedHashMap<Integer, String> sports = d.ExcuseSports();
         ArrayList<String> sportName = new ArrayList<>(sports.values());
@@ -44,12 +78,12 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         arrayAdapter.insert(" Choose a Default Sport", 0);
         chooseDiveSpinner.setAdapter(arrayAdapter);
-
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+        sportId = i;
     }
 
     @Override
