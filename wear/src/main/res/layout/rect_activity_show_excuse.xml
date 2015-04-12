@@ -3,25 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="40dp"
     android:orientation="vertical"
-    tools:context=".ExcuseMeWear"
+    tools:context="com.rodriguez.theexcusebook.ShowExcuseWear"
     tools:deviceIds="wear_square"
     android:background="@color/primary_dark">
 
-    <!--<TextView android:id="@+id/text"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="fill_parent"-->
-        <!--android:gravity="center"-->
-        <!--android:text="@string/hello_square" />-->
-
-    <Button
-        android:id="@+id/btnExcuseMe"
+    <TextView
+        android:id="@+id/txtExcusetext"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        style="?android:attr/borderlessButtonStyle"
-        android:text="@string/excuse_me"
         android:gravity="center"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:text="" />
 
 </LinearLayout>
