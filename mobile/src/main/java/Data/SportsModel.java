@@ -6,8 +6,6 @@ public class SportsModel {
     private int sportId;
     private String sportName;
 
-    public SportsModel() { }
-
     public SportsModel(String sportName) {
         this.sportName = sportName;
     }
@@ -21,15 +19,8 @@ public class SportsModel {
         return sportId;
     }
 
-    public void setSportId(int sportId) {
-        this.sportId = sportId;
-    }
-
     public String getSportName() {
         return sportName;
     }
 
-    public String setSportName(String sportName) {
-       return this.sportName = sportName;
-    }
 }

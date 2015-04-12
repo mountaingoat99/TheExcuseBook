@@ -12,5 +12,11 @@
     <string name="title_activity_change_sport">Change Sport</string>
     <string name="update_sport">Update Sport</string>
     <string name="add_sport">Add Sport</string>
+    <string name="title_activity_add_excuse">Add Excuse</string>
+    <string name="add_new_excuse">Add Excuse</string>
+    <string name="enter_new_excuse">Enter New Excuse</string>
+    <string name="title_activity_add_sport">Add Sport</string>
+    <string name="enter_new_sport">Enter New Sport</string>
+    <string name="new_sport">New Sport</string>
 
 </resources>

@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/dialog_horizontal_margin"
+    android:paddingRight="@dimen/dialog_horizontal_margin"
+    android:paddingTop="@dimen/dialog_vertical_margin"
+    android:paddingBottom="@dimen/dialog_vertical_margin"
+    tools:context="com.rodriguez.theexcusebook.AddSport"
+    android:background="@color/primary_dark">
+
+    <EditText
+        android:id="@+id/editAddSport"
+        android:hint="@string/enter_new_sport"
+        android:background="@drawable/layout_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textCapWords"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/primary_light"
+        android:textCursorDrawable="@null">
+        <requestFocus/>
+    </EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="@string/new_sport"
+        android:id="@+id/btnAddSport"
+        android:textSize="@dimen/button_text_small"
+        android:layout_below="@+id/editAddSport"
+        android:layout_alignRight="@+id/editAddSport"
+        android:layout_alignEnd="@+id/editAddSport"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/primary_text"/>
+
+</RelativeLayout>

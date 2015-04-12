@@ -1,6 +1,5 @@
 package com.rodriguez.theexcusebook;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -78,7 +77,7 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
                 R.layout.spinner_item, sportName);
 
         arrayAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        arrayAdapter.insert(" Choose a Default Sport", 0);
+        //arrayAdapter.insert(" Choose a Default Sport", 0);
         chooseDiveSpinner.setAdapter(arrayAdapter);
     }
 

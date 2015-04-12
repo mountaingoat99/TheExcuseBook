@@ -18,9 +18,4 @@
         android:orderInCategory="300"
         app:showAsAction="collapseActionView" />
 
-    <item android:id="@+id/contact"
-        android:title="@string/contact"
-        android:orderInCategory="400"
-        app:showAsAction="collapseActionView" />
-
 </menu>

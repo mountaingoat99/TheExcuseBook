@@ -36,10 +36,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return LOG;
     }
 
-    public static int getDatabaseVersion() {
-        return DATABASE_VERSION;
-    }
-
     public static String getSports() {
         return SPORTS_TABLE;
     }
@@ -74,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // create tables
     public static final String CREATE_TABLE_SPORTS = "CREATE TABLE IF NOT EXISTS "
-            + SPORTS_TABLE + "(" + KEY_ID + " INTEGER PRIMARY KEY, "
+            + SPORTS_TABLE + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + SPORT_NAME + " TEXT " + ")";
 
     public static final String CREATE_TABLE_EXCUSES = "CREATE TABLE IF NOT EXISTS "
@@ -126,6 +122,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(SPORTS_TABLE, null, values);
     }
 
+    public void createNewSport(SportsModel sport, SQLiteDatabase db){
+
+        ContentValues values = new ContentValues();
+        values.put(SPORT_NAME, sport.getSportName());
+
+        db.insert(SPORTS_TABLE, null, values);
+    }
+
     public void createExcuses(ExcuseModel excuse, SQLiteDatabase db){
 
         ContentValues values = new ContentValues();
@@ -152,6 +156,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private void fillSports(SQLiteDatabase db){
 
+        SportsModel sport = new SportsModel(0, "Choose a Default Sport");
         SportsModel sport1 = new SportsModel(1, "Cycling");
         SportsModel sport2 = new SportsModel(2, "Running");
         SportsModel sport3 = new SportsModel(3, "XC Skiing");
@@ -163,6 +168,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SportsModel sport9 = new SportsModel(9, "Football(Soccer)");
         SportsModel sport10 = new SportsModel(10, "Golf");
 
+        createSports(sport, db);
         createSports(sport1, db);
         createSports(sport2, db);
         createSports(sport3, db);

@@ -2,6 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
         <item name="android:background">@color/primary_dark</item>
         <item name="android:windowBackground">@color/primary_dark</item>
         <item name="android:colorBackground">@color/primary_dark</item>
@@ -16,8 +17,27 @@
 
     </style>
 
+    <!-- dialog with spinners and radio buttons -->
+    <style name="Theme.DialogTheme" parent="Theme.AppCompat.Dialog">
+
+        <!-- Edit Text Items -->
+        <item name="colorControlNormal">@color/accent</item>
+        <item name="colorControlActivated">@color/primary_dark</item>
+        <item name="colorControlHighlight">@color/primary_dark</item>
+
+    </style>
+
     <style name="TextAppearance">
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- date picker -->
+    <style name="Theme.SelectDate" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:editTextStyle">@style/Widget.EditText.Black</item>
+    </style>
+
+    <style name="Widget.EditText.Black" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@color/primary_text</item>
     </style>
 
 </resources>

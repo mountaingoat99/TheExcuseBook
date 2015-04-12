@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -17,24 +16,24 @@ public class DataInterface extends DatabaseHelper {
     }
 
     // select List of Sports
-    public List<String> SportList() {
-        List<String> sport = new ArrayList<>();
-
-        String selectQuery = "SELECT " + getSportName() + " FROM " + getSports();
-        Log.e(getLog(), selectQuery);
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery(selectQuery, null);
-
-        if (c.moveToFirst()) {
-            do{
-                SportsModel s = new SportsModel();
-                sport.add(s.setSportName(c.getString(c.getColumnIndex(getSportName()))));
-            } while (c.moveToNext());
-        }
-        c.close();
-        db.close();
-        return sport;
-    }
+//    public List<String> SportList() {
+//        List<String> sport = new ArrayList<>();
+//
+//        String selectQuery = "SELECT " + getSportName() + " FROM " + getSports();
+//        Log.e(getLog(), selectQuery);
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        Cursor c = db.rawQuery(selectQuery, null);
+//
+//        if (c.moveToFirst()) {
+//            do{
+//                SportsModel s = new SportsModel();
+//                sport.add(s.setSportName(c.getString(c.getColumnIndex(getSportName()))));
+//            } while (c.moveToNext());
+//        }
+//        c.close();
+//        db.close();
+//        return sport;
+//    }
 
     // select List of Excuses by sport
     public List<String> ExcuseList(int sportid) {
@@ -60,25 +59,25 @@ public class DataInterface extends DatabaseHelper {
 
     // may not use this
     // select Dictionary of Excuses by Sport
-    public Hashtable<Integer,String> ExcuseListBySport(int sportid){
-        Hashtable<Integer, String> excuse = new Hashtable<>();
-
-        String selectQuery = "SELECT " + getKeyId() + ", " + getExcuseName()
-                + " FROM " + getExcuses()
-                + " WHERE " + getSportId() + "=" + sportid;
-        Log.e(getLog(), selectQuery);
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery(selectQuery, null);
-
-        if(c.moveToFirst()) {              // TODO this needs to loop through each excuse
-            do{
-                excuse.put(c.getInt(0), c.getString(1));
-            } while (c.moveToNext());
-        }
-        c.close();
-        db.close();
-        return excuse;
-    }
+//    public Hashtable<Integer,String> ExcuseListBySport(int sportid){
+//        Hashtable<Integer, String> excuse = new Hashtable<>();
+//
+//        String selectQuery = "SELECT " + getKeyId() + ", " + getExcuseName()
+//                + " FROM " + getExcuses()
+//                + " WHERE " + getSportId() + "=" + sportid;
+//        Log.e(getLog(), selectQuery);
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        Cursor c = db.rawQuery(selectQuery, null);
+//
+//        if(c.moveToFirst()) {              // TODO this needs to loop through each excuse
+//            do{
+//                excuse.put(c.getInt(0), c.getString(1));
+//            } while (c.moveToNext());
+//        }
+//        c.close();
+//        db.close();
+//        return excuse;
+//    }
 
     // select the list of sports and the ID's
     public LinkedHashMap<Integer, String> ExcuseSports() {
@@ -110,21 +109,24 @@ public class DataInterface extends DatabaseHelper {
     }
 
     // Insert New Sport
-    public void AddSport(String sportName){
+    public int AddSport(String sportName){
         String newSportExcuse = "I've never liked this sport anyway";
 
         SQLiteDatabase db = this.getWritableDatabase();
         SportsModel sport = new SportsModel(sportName);
-        createSports(sport, db);
+        createNewSport(sport, db);
 
         // get the new sportid
         int sportID = newSportId(sportName);
 
         // add one default excuse for the sport here
-        // I've never liked this sport anyway
+        // open the db again
+        SQLiteDatabase db1 = this.getWritableDatabase();
         ExcuseModel excuse = new ExcuseModel(sportID, newSportExcuse);
-        createExcuses(excuse, db);
+        createExcuses(excuse, db1);
         db.close();
+
+        return sportID;
     }
 
     // get the new sportID

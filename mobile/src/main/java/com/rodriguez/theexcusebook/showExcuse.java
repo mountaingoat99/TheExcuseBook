@@ -1,7 +1,6 @@
 package com.rodriguez.theexcusebook;
 
 import android.content.Context;
-import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.support.v7.app.ActionBarActivity;

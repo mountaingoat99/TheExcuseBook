@@ -1,6 +1,5 @@
 package com.rodriguez.theexcusebook;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -105,18 +104,16 @@ public class ExcuseMe extends ActionBarActivity {
                 NavUtils.navigateUpFromSameTask(this);
                 return true;
             case R.id.change_sport:
-                //TODO show change dialog
                 Intent intent = new Intent(context, ChangeSport.class);
                 startActivity(intent);
                 break;
             case R.id.add_excuses:
-                //TODO show Add dialog
+                Intent intent1 = new Intent(context, AddExcuse.class);
+                startActivity(intent1);
                 break;
             case R.id.add_sport:
-                //TODO show add sport dialog
-                break;
-            case R.id.contact:
-                //TODO show contact
+                Intent intent2 = new Intent(context, AddSport.class);
+                startActivity(intent2);
                 break;
         }
 

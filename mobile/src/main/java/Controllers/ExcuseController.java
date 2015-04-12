@@ -27,5 +27,9 @@ public class ExcuseController {
         return excuse;
     }
 
+    public static void AddExcuse(int sportid, String excuseName, Context context){
 
+        DataInterface di = new DataInterface(context);
+        di.AddExcuse(excuseName, sportid);
+    }
 }

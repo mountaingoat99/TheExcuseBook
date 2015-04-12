@@ -3,11 +3,8 @@ package Utilities;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+//import android.hardware.SensorManager;
 
-/**
- * Created by Jeremey on 4/7/2015.
- */
 public class ShakeEventListener implements SensorEventListener {
     /** Minimum movement force to consider. */
     private static final int MIN_FORCE = 10;
@@ -63,9 +60,13 @@ public class ShakeEventListener implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent se) {
         // get sensor data
-        float x = se.values[SensorManager.DATA_X];
-        float y = se.values[SensorManager.DATA_Y];
-        float z = se.values[SensorManager.DATA_Z];
+        float x = se.values[0];
+        float y = se.values[1];
+        float z = se.values[2];
+
+//        float x = se.values[SensorManager.DATA_X];
+//        float y = se.values[SensorManager.DATA_Y];
+//        float z = se.values[SensorManager.DATA_Z];
 
         // calculate movement
         float totalMovement = Math.abs(x + y + z - lastX - lastY - lastZ);
