@@ -22,6 +22,7 @@ public class ExcuseMeWear extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_excuse_me_wear);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
+
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
