@@ -10,7 +10,7 @@ import Controllers.ExcuseController;
 
 public class ShowExcuseWear extends Activity {
 
-    private TextView mTextView;
+    //private TextView mTextView;
     private int sportId;
     private String showExcuse = null;
     private final Context context = this;
@@ -23,19 +23,22 @@ public class ShowExcuseWear extends Activity {
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
-                mTextView = (TextView) stub.findViewById(R.id.txtExcusetext);
+                //mTextView = (TextView) stub.findViewById(R.id.txtExcusetext);
+
+                Bundle b = getIntent().getExtras();
+                if (b != null) {
+                    sportId = b.getInt("sportId");
+                }
+
+                NewExcuse();
             }
         });
 
-        Bundle b = getIntent().getExtras();
-        if(b != null){
-            sportId = b.getInt("sportId");
-        }
 
-        NewExcuse();
     }
 
     private void NewExcuse() {
+        final TextView mTextView = (TextView)findViewById(R.id.txtExcusetext);
         ExcuseController ec = new ExcuseController();
         showExcuse = ec.FindExcuse(sportId, context);
         mTextView.setText(showExcuse);

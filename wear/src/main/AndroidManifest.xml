@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rodriguez.theexcusebook" >
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <uses-feature android:name="android.hardware.type.watch" />
 
     <application
@@ -22,6 +25,15 @@
             android:name=".ShowExcuseWear"
             android:label="@string/title_activity_show_excuse" >
         </activity>
+
+        <service
+            android:name=".OngoingNotificationListenerService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

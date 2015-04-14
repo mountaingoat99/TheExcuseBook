@@ -15,6 +15,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.Builder;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.wearable.Asset;
+import com.google.android.gms.wearable.DataApi;
+import com.google.android.gms.wearable.PutDataMapRequest;
+import com.google.android.gms.wearable.PutDataRequest;
+import com.google.android.gms.wearable.Wearable;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -22,12 +32,18 @@ import Controllers.DefaultController;
 import Data.DataInterface;
 
 
-public class ChangeSport extends ActionBarActivity implements AdapterView.OnItemSelectedListener{
+public class ChangeSport extends ActionBarActivity implements AdapterView.OnItemSelectedListener,
+        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     int sportId;
     private Spinner chooseDiveSpinner;
     private Button btnUpdateSport;
     final Context context = this;
+
+    private static final String PATH = "/datapathtest";
+    private static final String SPORT_KEY = "sportID";
+    private static final String TAG = "ChangeSport ";
+    private GoogleApiClient  mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +61,25 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
         SetSpinnerData();
         checkDefaultSport();
         addListenerOnButton();
+
+        mGoogleApiClient = new Builder(this)
+                .addApi(Wearable.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
+
+        if (!mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.connect();
+        }
+    }
+
+    @Override
+    public void onDestroy(){
+        if(mGoogleApiClient.isConnected()){
+            mGoogleApiClient.disconnect();
+        }
+
+        super.onDestroy();
     }
 
     private void addListenerOnButton() {
@@ -54,6 +89,27 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
             public void onClick(View view) {
                 DataInterface di = new DataInterface(context);
                 if (sportId > 0) {
+
+                    // make sure the request is running and update it on the watch
+                    if(mGoogleApiClient.isConnected()) {
+
+                        PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
+
+                        // add data to the request
+                        putDataMapRequest.getDataMap().putInt(SPORT_KEY, sportId);
+                        PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+                        Wearable.DataApi.putDataItem(mGoogleApiClient, request)
+                                .setResultCallback(new ResultCallback<DataApi.DataItemResult>() {
+                                    @Override
+                                    public void onResult(DataApi.DataItemResult dataItemResult) {
+                                        Log.d(TAG, "putDataItem status: "
+                                                + dataItemResult.getStatus().toString());
+                                    }
+                                });
+                    }
+
+                    // always update the record on the phone
                     di.UpdateDefaultSport(sportId);
                 }
                 Intent intent = new Intent(context, ExcuseMe.class);
@@ -77,7 +133,6 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
                 R.layout.spinner_item, sportName);
 
         arrayAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        //arrayAdapter.insert(" Choose a Default Sport", 0);
         chooseDiveSpinner.setAdapter(arrayAdapter);
     }
 
@@ -115,4 +170,18 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
     }
 
 
+    @Override
+    public void onConnected(Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
 }

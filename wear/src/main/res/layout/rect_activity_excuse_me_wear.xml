@@ -22,6 +22,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:text="@string/excuse_me"
         android:gravity="center"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:onClick="setContentView" />
 
 </LinearLayout>

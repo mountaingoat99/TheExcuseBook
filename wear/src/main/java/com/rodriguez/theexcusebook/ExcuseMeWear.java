@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import Controllers.DefaultController;
+
 public class ExcuseMeWear extends Activity {
 
     private Button mbtnExcuseMe;
@@ -30,20 +32,19 @@ public class ExcuseMeWear extends Activity {
             }
         });
 
-        addListenerOnButton();
+        checkDefaultSport();
     }
 
-    public void addListenerOnButton(){
+    public void setContentView(View v){
+        Intent intent = new Intent(context, ShowExcuseWear.class);
+        Bundle b = new Bundle();
+        b.putInt("sportId", sportId);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
 
-        mbtnExcuseMe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ShowExcuseWear.class);
-                Bundle b = new Bundle();
-                b.putInt("sportId", sportId);
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        });
+    public void checkDefaultSport() {
+        sportId = DefaultController.DefaultSport(context);
+        Log.e("Default SportID is", String.valueOf(sportId));
     }
 }
