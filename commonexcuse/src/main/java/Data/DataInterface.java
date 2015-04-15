@@ -129,6 +129,22 @@ public class DataInterface extends DatabaseHelper {
         return sportID;
     }
 
+    // Insert New Sport with an ID, the wear app uses this on sync
+    public void AddSport(String sportName, int sportid){
+        String newSportExcuse = "I've never liked this sport anyway";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        SportsModel sport = new SportsModel(sportid, sportName);
+        createNewSport(sport, db);
+
+        // add one default excuse for the sport here
+        // open the db again
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        ExcuseModel excuse = new ExcuseModel(sportid, newSportExcuse);
+        createExcuses(excuse, db1);
+        db.close();
+    }
+
     // get the new sportID
     public int newSportId(String newSportName) {
         int sportid = 0;

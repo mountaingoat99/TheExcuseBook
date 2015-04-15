@@ -291,16 +291,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex100 = new ExcuseModel(9, "test1");
 
         // Golf excuses
-        ExcuseModel ex101 = new ExcuseModel(10, "test1");
-        ExcuseModel ex102 = new ExcuseModel(10, "test1");
-        ExcuseModel ex103 = new ExcuseModel(10, "test1");
-        ExcuseModel ex104 = new ExcuseModel(10, "test1");
-        ExcuseModel ex105 = new ExcuseModel(10, "test1");
-        ExcuseModel ex106 = new ExcuseModel(10, "test1");
-        ExcuseModel ex107 = new ExcuseModel(10, "test1");
-        ExcuseModel ex108 = new ExcuseModel(10, "test1");
-        ExcuseModel ex109 = new ExcuseModel(10, "test1");
-        ExcuseModel ex110 = new ExcuseModel(10, "test1");
+        ExcuseModel ex101 = new ExcuseModel(10, "Didn't warmed up");
+        ExcuseModel ex102 = new ExcuseModel(10, "It is too windy");
+        ExcuseModel ex103 = new ExcuseModel(10, "Someone talked in my backswing");
+        ExcuseModel ex104 = new ExcuseModel(10, "Ball has less dimples than I usually play");
+        ExcuseModel ex105 = new ExcuseModel(10, "The sun was in my eyes");
+        ExcuseModel ex106 = new ExcuseModel(10, "I already played 18 before this, so I'm drunk");
+        ExcuseModel ex107 = new ExcuseModel(10, "Trying something I saw on YouTube to fix my slice");
+        ExcuseModel ex108 = new ExcuseModel(10, "That was a practice swing");
+        ExcuseModel ex109 = new ExcuseModel(10, "I’m not drunk enough yet");
+        ExcuseModel ex110 = new ExcuseModel(10, "I hate this kind of grass");
+        ExcuseModel ex111 = new ExcuseModel(10, "Shot would have been perfect if it not for the tree");
+        ExcuseModel ex112 = new ExcuseModel(10, "I meant to do that!");
+        ExcuseModel ex113 = new ExcuseModel(10, "I am a better player than these clubs allow me to be");
+        ExcuseModel ex114 = new ExcuseModel(10, "I’m better than this I swear");
+        ExcuseModel ex115 = new ExcuseModel(10, "I was in between clubs for that distance");
 
         createExcuses(ex1, db);
         createExcuses(ex2, db);
@@ -411,5 +416,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex108, db);
         createExcuses(ex109, db);
         createExcuses(ex110, db);
+        createExcuses(ex111, db);
+        createExcuses(ex112, db);
+        createExcuses(ex113, db);
+        createExcuses(ex114, db);
+        createExcuses(ex115, db);
     }
 }

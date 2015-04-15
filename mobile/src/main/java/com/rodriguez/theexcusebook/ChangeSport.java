@@ -42,7 +42,9 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
 
     private static final String PATH = "/datapathtest";
     private static final String SPORT_KEY = "sportID";
+    private static final String TYPE_KEY = "typeKey";
     private static final String TAG = "ChangeSport ";
+    private static final String UPDATE_TYPE = "Change_Sport";
     private GoogleApiClient  mGoogleApiClient;
 
     @Override
@@ -97,6 +99,7 @@ public class ChangeSport extends ActionBarActivity implements AdapterView.OnItem
 
                         // add data to the request
                         putDataMapRequest.getDataMap().putInt(SPORT_KEY, sportId);
+                        putDataMapRequest.getDataMap().putString(TYPE_KEY, UPDATE_TYPE);
                         PutDataRequest request = putDataMapRequest.asPutDataRequest();
 
                         Wearable.DataApi.putDataItem(mGoogleApiClient, request)

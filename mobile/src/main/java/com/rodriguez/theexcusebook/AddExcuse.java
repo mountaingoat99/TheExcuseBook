@@ -10,21 +10,39 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.wearable.DataApi;
+import com.google.android.gms.wearable.PutDataMapRequest;
+import com.google.android.gms.wearable.PutDataRequest;
+import com.google.android.gms.wearable.Wearable;
 
 import Controllers.DefaultController;
 import Controllers.ExcuseController;
 
 
-public class AddExcuse extends ActionBarActivity {
+public class AddExcuse extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks,
+            GoogleApiClient.OnConnectionFailedListener {
 
     private EditText newExcuse;
     private Button btnAddExcuse;
     private String excuseString;
-    int sportId;
+    private int sportId;
     final Context context = this;
+
+    private static final String PATH = "/datapathtest";
+    private static final String SPORT_KEY = "sportID";
+    private static final String NEW_EXCUSE_KEY = "newExcuse";
+    private static final String TYPE_KEY = "typeKey";
+    private static final String TAG = "AddExcuse ";
+    private static final String UPDATE_TYPE = "Add_Excuse";
+    private GoogleApiClient  mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +58,24 @@ public class AddExcuse extends ActionBarActivity {
         checkDefaultSport();
         addListenerOnButton();
 
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(Wearable.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
+
+        if (!mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.connect();
+        }
+    }
+
+    @Override
+    public void onDestroy(){
+        if(mGoogleApiClient.isConnected()){
+            mGoogleApiClient.disconnect();
+        }
+
+        super.onDestroy();
     }
 
     public void checkDefaultSport() {
@@ -54,6 +90,27 @@ public class AddExcuse extends ActionBarActivity {
                 public void onClick(View view) {
                     excuseString = newExcuse.getText().toString().trim();
                     if (!excuseString.isEmpty()){
+
+                        // make sure the request is running and update it on the watch
+                        if(mGoogleApiClient.isConnected()) {
+
+                            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
+
+                            // add data to the request
+                            putDataMapRequest.getDataMap().putInt(SPORT_KEY, sportId);
+                            putDataMapRequest.getDataMap().putString(NEW_EXCUSE_KEY, excuseString);
+                            putDataMapRequest.getDataMap().putString(TYPE_KEY, UPDATE_TYPE);
+                            PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+                            Wearable.DataApi.putDataItem(mGoogleApiClient, request)
+                                    .setResultCallback(new ResultCallback<DataApi.DataItemResult>() {
+                                        @Override
+                                        public void onResult(DataApi.DataItemResult dataItemResult) {
+                                            Log.d(TAG, "putDataItem status: "
+                                                    + dataItemResult.getStatus().toString());
+                                        }
+                                    });
+                        }
 
                         ExcuseController.AddExcuse(sportId, excuseString, context);
 
@@ -95,5 +152,20 @@ public class AddExcuse extends ActionBarActivity {
         //}
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
     }
 }

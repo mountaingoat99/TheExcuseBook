@@ -22,4 +22,9 @@ public class DefaultController {
         DataInterface di = new DataInterface(context);
         return di.AddSport(sportName);
     }
+
+    public static void AddNewSportWithID(String sportName, int sportId, Context context) {
+        DataInterface di = new DataInterface(context);
+        di.AddSport(sportName, sportId);
+    }
 }
