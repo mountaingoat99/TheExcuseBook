@@ -8,12 +8,13 @@ import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import Controllers.DefaultController;
 
 public class ExcuseMeWear extends Activity {
 
-    private Button mbtnExcuseMe;
+    private ImageButton mbtnExcuseMe;
     public static final String TAG = "MAIN_ACTIVITY";
     private int sportId = 0;
     private final Context context = this;
@@ -28,7 +29,7 @@ public class ExcuseMeWear extends Activity {
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
-                mbtnExcuseMe = (Button) stub.findViewById(R.id.btnExcuseMe);
+                mbtnExcuseMe = (ImageButton) stub.findViewById(R.id.btnExcuseMe);
             }
         });
 

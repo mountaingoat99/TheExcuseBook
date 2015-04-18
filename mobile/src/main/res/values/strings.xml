@@ -18,5 +18,6 @@
     <string name="title_activity_add_sport">Add Sport</string>
     <string name="enter_new_sport">Enter New Sport</string>
     <string name="new_sport">New Sport</string>
+    <string name="the_excuse_book">TheExcuseBook</string>
 
 </resources>

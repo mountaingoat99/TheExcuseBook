@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
-        <item name="android:background">@color/primary_dark</item>
-        <item name="android:windowBackground">@color/primary_dark</item>
-        <item name="android:colorBackground">@color/primary_dark</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:colorBackground">@color/primary</item>
 
         <!-- Edit Text Items -->
         <item name="colorControlNormal">@color/accent</item>

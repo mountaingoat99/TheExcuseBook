@@ -5,17 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".ExcuseMeWear"
     tools:deviceIds="wear_round"
-    android:background="@color/primary_dark">
+    android:background="@color/primary">
 
-    <Button
+    <ImageButton
         android:id="@+id/btnExcuseMe"
-        android:layout_width="wrap_content"
+        android:onClick="setContentView"
         android:layout_height="wrap_content"
-        style="?android:attr/borderlessButtonStyle"
-        android:text="@string/excuse_me"
+        android:layout_width="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:onClick="setContentView" />
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:src="@drawable/ic_wearbutton"
+        android:background="@color/primary"
+        android:contentDescription="@string/excuse_me" />
 
 </RelativeLayout>

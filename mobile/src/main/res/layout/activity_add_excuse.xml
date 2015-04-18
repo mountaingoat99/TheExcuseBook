@@ -12,8 +12,8 @@
         android:id="@+id/editAddExcuse"
         android:hint="@string/enter_new_excuse"
         android:background="@drawable/layout_selector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
@@ -38,6 +38,6 @@
         android:layout_alignRight="@+id/editAddExcuse"
         android:layout_alignEnd="@+id/editAddExcuse"
         android:layout_marginBottom="8dp"
-        android:textColor="@color/primary_text"/>
+        android:textColor="@color/icons"/>
 
 </RelativeLayout>

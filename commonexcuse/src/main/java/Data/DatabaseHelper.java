@@ -193,36 +193,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex8 = new ExcuseModel(1,"I over-trained");
         ExcuseModel ex9 = new ExcuseModel(1, "I under-trained");
         ExcuseModel ex10 = new ExcuseModel(1, "Saddle was 1 cm too high");
+        ExcuseModel ex116 = new ExcuseModel(1, "I didn't feel good during my warm up");
+        ExcuseModel ex117 = new ExcuseModel(1, "I didn't warm up");
+        ExcuseModel ex118 = new ExcuseModel(1, "I didn't have my carbon wheels");
+        ExcuseModel ex119 = new ExcuseModel(1, "I'm tapering");
+        ExcuseModel ex120 = new ExcuseModel(1, "The guys I ride with are tools");
+        ExcuseModel ex121 = new ExcuseModel(1, "The group I was with wasn't very strong");
+        ExcuseModel ex122 = new ExcuseModel(1, "Too much headwind");
+        ExcuseModel ex123 = new ExcuseModel(1, "Too many crosswinds");
+        ExcuseModel ex128 = new ExcuseModel(1, "I was hungover");
 
         // Running excuses
-        ExcuseModel ex11 = new ExcuseModel(2, "test1");
-        ExcuseModel ex12 = new ExcuseModel(2, "test1");
-        ExcuseModel ex13 = new ExcuseModel(2, "test1");
-        ExcuseModel ex14 = new ExcuseModel(2, "test1");
-        ExcuseModel ex15 = new ExcuseModel(2, "test1");
-        ExcuseModel ex16 = new ExcuseModel(2, "test1");
-        ExcuseModel ex17 = new ExcuseModel(2, "test1");
-        ExcuseModel ex18 = new ExcuseModel(2, "test1");
-        ExcuseModel ex19 = new ExcuseModel(2, "test1");
-        ExcuseModel ex20 = new ExcuseModel(2, "test1");
+        ExcuseModel ex11 = new ExcuseModel(2, "Too much leg chaffing today");
+        ExcuseModel ex12 = new ExcuseModel(2, "I did too many miles this week");
+        ExcuseModel ex13 = new ExcuseModel(2, "I didn't do enough miles this week");
+        ExcuseModel ex14 = new ExcuseModel(2, "I'm tapering");
+        ExcuseModel ex15 = new ExcuseModel(2, "It was too windy");
+        ExcuseModel ex16 = new ExcuseModel(2, "Not enough sleep");
+        ExcuseModel ex17 = new ExcuseModel(2, "Ate way too many carbs");
+        ExcuseModel ex18 = new ExcuseModel(2, "Didn't eat enough carbs");
+        ExcuseModel ex19 = new ExcuseModel(2, "Had to go to the bathroom");
+        ExcuseModel ex20 = new ExcuseModel(2, "I was hungover");
+        ExcuseModel ex124 = new ExcuseModel(2, "It wasn't my good distance");
+        ExcuseModel ex125 = new ExcuseModel(2, "Forgot my chews");
+        ExcuseModel ex126 = new ExcuseModel(2, "I had a blister");
+        ExcuseModel ex127 = new ExcuseModel(2, "I pulled a muscle");
 
         // XC Skiing Excuses
-        ExcuseModel ex21 = new ExcuseModel(3, "test1");
-        ExcuseModel ex22 = new ExcuseModel(3, "test1");
-        ExcuseModel ex23 = new ExcuseModel(3, "test1");
-        ExcuseModel ex24 = new ExcuseModel(3, "test1");
-        ExcuseModel ex25 = new ExcuseModel(3, "test1");
-        ExcuseModel ex26 = new ExcuseModel(3, "test1");
-        ExcuseModel ex27 = new ExcuseModel(3, "test1");
-        ExcuseModel ex28 = new ExcuseModel(3, "test1");
-        ExcuseModel ex29 = new ExcuseModel(3, "test1");
-        ExcuseModel ex30 = new ExcuseModel(3, "test1");
+        ExcuseModel ex21 = new ExcuseModel(3, "I over trained");
+        ExcuseModel ex22 = new ExcuseModel(3, "I under trained");
+        ExcuseModel ex23 = new ExcuseModel(3, "Picked the wrong wax");
+        ExcuseModel ex24 = new ExcuseModel(3, "Picked the wrong skis");
+        ExcuseModel ex25 = new ExcuseModel(3, "Not my type of snow");
+        ExcuseModel ex26 = new ExcuseModel(3, "Just got a really poor grind");
+        ExcuseModel ex27 = new ExcuseModel(3, "I was hungover");
+        ExcuseModel ex28 = new ExcuseModel(3, "I never liked this course anyway");
+        ExcuseModel ex29 = new ExcuseModel(3, "I never really liked these skis");
+        ExcuseModel ex30 = new ExcuseModel(3, "Snow was too soft");
+        ExcuseModel ex129 = new ExcuseModel(3, "It wasn't very good grooming");
 
         // Diving excuses
-        ExcuseModel ex41 = new ExcuseModel(4, "test1");
-        ExcuseModel ex42 = new ExcuseModel(4, "test1");
-        ExcuseModel ex43 = new ExcuseModel(4, "test1");
-        ExcuseModel ex44 = new ExcuseModel(4, "test1");
+        ExcuseModel ex41 = new ExcuseModel(4, "I lost my spot");
+        ExcuseModel ex42 = new ExcuseModel(4, "I slipped");
+        ExcuseModel ex43 = new ExcuseModel(4, "The board had no bounce");
+        ExcuseModel ex44 = new ExcuseModel(4, "The board had too much bounce");
         ExcuseModel ex45 = new ExcuseModel(4, "test1");
         ExcuseModel ex46 = new ExcuseModel(4, "test1");
         ExcuseModel ex47 = new ExcuseModel(4, "test1");
@@ -231,7 +245,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex50 = new ExcuseModel(4, "test1");
 
         // Swimming Excuses
-        ExcuseModel ex51 = new ExcuseModel(5, "test1");
+        ExcuseModel ex51 = new ExcuseModel(5, "I broke my taper");
         ExcuseModel ex52 = new ExcuseModel(5, "test1");
         ExcuseModel ex53 = new ExcuseModel(5, "test1");
         ExcuseModel ex54 = new ExcuseModel(5, "test1");
@@ -255,56 +269,56 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex70 = new ExcuseModel(6, "test1");
 
         // AM Football excuses
-        ExcuseModel ex71 = new ExcuseModel(7, "test1");
-        ExcuseModel ex72 = new ExcuseModel(7, "test1");
-        ExcuseModel ex73 = new ExcuseModel(7, "test1");
-        ExcuseModel ex74 = new ExcuseModel(7, "test1");
-        ExcuseModel ex75 = new ExcuseModel(7, "test1");
-        ExcuseModel ex76 = new ExcuseModel(7, "test1");
-        ExcuseModel ex77 = new ExcuseModel(7, "test1");
+        ExcuseModel ex71 = new ExcuseModel(7, "I was hungover");
+        ExcuseModel ex72 = new ExcuseModel(7, "The sun was in my eyes");
+        ExcuseModel ex73 = new ExcuseModel(7, "The refs lost us the game");
+        ExcuseModel ex74 = new ExcuseModel(7, "Too many injuries");
+        ExcuseModel ex75 = new ExcuseModel(7, "Our division is too tough");
+        ExcuseModel ex76 = new ExcuseModel(7, "My teammates really suck");
+        ExcuseModel ex77 = new ExcuseModel(7, "We had our backup QB playing");
         ExcuseModel ex78 = new ExcuseModel(7, "test1");
         ExcuseModel ex79 = new ExcuseModel(7, "test1");
         ExcuseModel ex80 = new ExcuseModel(7, "test1");
 
         // Baseball excuses
-        ExcuseModel ex81 = new ExcuseModel(8, "test1");
-        ExcuseModel ex82 = new ExcuseModel(8, "test1");
-        ExcuseModel ex83 = new ExcuseModel(8, "test1");
-        ExcuseModel ex84 = new ExcuseModel(8, "test1");
-        ExcuseModel ex85 = new ExcuseModel(8, "test1");
-        ExcuseModel ex86 = new ExcuseModel(8, "test1");
-        ExcuseModel ex87 = new ExcuseModel(8, "test1");
-        ExcuseModel ex88 = new ExcuseModel(8, "test1");
-        ExcuseModel ex89 = new ExcuseModel(8, "test1");
-        ExcuseModel ex90 = new ExcuseModel(8, "test1");
+        ExcuseModel ex81 = new ExcuseModel(8, "Sun was in my eyes");
+        ExcuseModel ex82 = new ExcuseModel(8, "I just worked out");
+        ExcuseModel ex83 = new ExcuseModel(8, "Wasn't paying attention");
+        ExcuseModel ex84 = new ExcuseModel(8, "Didn't think this was a serious game");
+        ExcuseModel ex85 = new ExcuseModel(8, "I've always done it like that");
+        ExcuseModel ex86 = new ExcuseModel(8, "Other team must be doping");
+        ExcuseModel ex87 = new ExcuseModel(8, "We got a bad call");
+        ExcuseModel ex88 = new ExcuseModel(8, "Too many injuries");
+        ExcuseModel ex89 = new ExcuseModel(8, "My teammates really suck");
+        ExcuseModel ex90 = new ExcuseModel(8, "Our division is too tough");
 
         // Football excuses
-        ExcuseModel ex91 = new ExcuseModel(9, "test1");
-        ExcuseModel ex92 = new ExcuseModel(9, "test1");
-        ExcuseModel ex93 = new ExcuseModel(9, "test1");
-        ExcuseModel ex94 = new ExcuseModel(9, "test1");
-        ExcuseModel ex95 = new ExcuseModel(9, "test1");
-        ExcuseModel ex96 = new ExcuseModel(9, "test1");
-        ExcuseModel ex97 = new ExcuseModel(9, "test1");
+        ExcuseModel ex91 = new ExcuseModel(9, "Other team must be doping");
+        ExcuseModel ex92 = new ExcuseModel(9, "Sun was in my eyes");
+        ExcuseModel ex93 = new ExcuseModel(9, "I wasn't paying attention");
+        ExcuseModel ex94 = new ExcuseModel(9, "We had some bad calls");
+        ExcuseModel ex95 = new ExcuseModel(9, "We have too many injuries");
+        ExcuseModel ex96 = new ExcuseModel(9, "My teammates really suck");
+        ExcuseModel ex97 = new ExcuseModel(9, "We had the backup goalie playing");
         ExcuseModel ex98 = new ExcuseModel(9, "test1");
         ExcuseModel ex99 = new ExcuseModel(9, "test1");
         ExcuseModel ex100 = new ExcuseModel(9, "test1");
 
         // Golf excuses
-        ExcuseModel ex101 = new ExcuseModel(10, "Didn't warmed up");
-        ExcuseModel ex102 = new ExcuseModel(10, "It is too windy");
+        ExcuseModel ex101 = new ExcuseModel(10, "Didn't warm up");
+        ExcuseModel ex102 = new ExcuseModel(10, "It's too windy");
         ExcuseModel ex103 = new ExcuseModel(10, "Someone talked in my backswing");
         ExcuseModel ex104 = new ExcuseModel(10, "Ball has less dimples than I usually play");
         ExcuseModel ex105 = new ExcuseModel(10, "The sun was in my eyes");
         ExcuseModel ex106 = new ExcuseModel(10, "I already played 18 before this, so I'm drunk");
         ExcuseModel ex107 = new ExcuseModel(10, "Trying something I saw on YouTube to fix my slice");
         ExcuseModel ex108 = new ExcuseModel(10, "That was a practice swing");
-        ExcuseModel ex109 = new ExcuseModel(10, "I’m not drunk enough yet");
+        ExcuseModel ex109 = new ExcuseModel(10, "I'm not drunk enough yet");
         ExcuseModel ex110 = new ExcuseModel(10, "I hate this kind of grass");
         ExcuseModel ex111 = new ExcuseModel(10, "Shot would have been perfect if it not for the tree");
         ExcuseModel ex112 = new ExcuseModel(10, "I meant to do that!");
         ExcuseModel ex113 = new ExcuseModel(10, "I am a better player than these clubs allow me to be");
-        ExcuseModel ex114 = new ExcuseModel(10, "I’m better than this I swear");
+        ExcuseModel ex114 = new ExcuseModel(10, "I'm better than this I swear");
         ExcuseModel ex115 = new ExcuseModel(10, "I was in between clubs for that distance");
 
         createExcuses(ex1, db);
@@ -317,6 +331,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex8, db);
         createExcuses(ex9, db);
         createExcuses(ex10, db);
+        createExcuses(ex116, db);
+        createExcuses(ex117, db);
+        createExcuses(ex118, db);
+        createExcuses(ex119, db);
+        createExcuses(ex120, db);
+        createExcuses(ex121, db);
+        createExcuses(ex122, db);
+        createExcuses(ex123, db);
+        createExcuses(ex128, db);
 
         createExcuses(ex11, db);
         createExcuses(ex12, db);
@@ -328,6 +351,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex18, db);
         createExcuses(ex19, db);
         createExcuses(ex20, db);
+        createExcuses(ex124, db);
+        createExcuses(ex125, db);
+        createExcuses(ex126, db);
+        createExcuses(ex127, db);
 
         createExcuses(ex21, db);
         createExcuses(ex22, db);
@@ -339,6 +366,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex28, db);
         createExcuses(ex29, db);
         createExcuses(ex30, db);
+        createExcuses(ex129, db);
 
         createExcuses(ex41, db);
         createExcuses(ex42, db);

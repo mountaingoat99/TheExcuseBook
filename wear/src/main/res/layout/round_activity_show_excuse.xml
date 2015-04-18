@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.wearable.view.BoxInsetLayout
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
     tools:context="com.rodriguez.theexcusebook.ShowExcuseWear"
-    tools:deviceIds="wear_round"
-    android:background="@color/primary_dark">
+    tools:deviceIds="wear_round">
 
-    <TextView
-        android:id="@+id/txtExcusetext"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:text="" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/primary"
+        app:layout_box="all">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/txtExcusetext"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/primary_text"
+            android:text="" />
+
+    </LinearLayout>
+</android.support.wearable.view.BoxInsetLayout>
+
