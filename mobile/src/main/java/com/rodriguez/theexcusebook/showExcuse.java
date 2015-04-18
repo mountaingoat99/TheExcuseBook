@@ -15,6 +15,8 @@ import android.widget.TextView;
 import Controllers.ExcuseController;
 import Utilities.ShakeEventListener;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class showExcuse extends ActionBarActivity {
 
@@ -35,6 +37,10 @@ public class showExcuse extends ActionBarActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(getResources().getColor(R.color.primary_dark));
         }
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         txtShowExcuse = (TextView)findViewById(R.id.txtExcuse);
 

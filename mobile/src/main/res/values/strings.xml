@@ -20,4 +20,7 @@
     <string name="new_sport">New Sport</string>
     <string name="the_excuse_book">TheExcuseBook</string>
 
+    <!-- Ad Unit ID for Google Ads-->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>

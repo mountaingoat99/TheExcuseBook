@@ -13,7 +13,7 @@
         android:orientation="vertical"
         tools:context=".ExcuseMeWear"
         tools:deviceIds="wear_square"
-        android:background="@color/primary"
+        android:background="@color/primary_material_light"
         app:layout_box="all">
 
     <ImageButton
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:src="@drawable/ic_wearbuttonsmall"
-        android:background="@color/primary"
+        android:src="@drawable/button_state"
+        android:background="@color/primary_material_light"
         android:contentDescription="@string/excuse_me" />
 
     </FrameLayout>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".ExcuseMeWear"
     tools:deviceIds="wear_round"
-    android:background="@color/primary">
+    android:background="@color/primary_material_light">
 
     <ImageButton
         android:id="@+id/btnExcuseMe"
@@ -15,8 +15,8 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:src="@drawable/ic_wearbutton"
-        android:background="@color/primary"
+        android:src="@drawable/button_state"
+        android:background="@color/primary_material_light"
         android:contentDescription="@string/excuse_me" />
 
 </RelativeLayout>

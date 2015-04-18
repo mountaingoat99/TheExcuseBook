@@ -202,6 +202,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex122 = new ExcuseModel(1, "Too much headwind");
         ExcuseModel ex123 = new ExcuseModel(1, "Too many crosswinds");
         ExcuseModel ex128 = new ExcuseModel(1, "I was hungover");
+        ExcuseModel ex130 = new ExcuseModel(1, "Wrong tires for conditions");
+        ExcuseModel ex131 = new ExcuseModel(1, "Couldn't shift into my granny");
+        ExcuseModel ex132 = new ExcuseModel(1, "Rode too hard yesterday");
+        ExcuseModel ex133 = new ExcuseModel(1, "Someone bumped me at the start");
+        ExcuseModel ex134 = new ExcuseModel(1, "I was too overgeared");
 
         // Running excuses
         ExcuseModel ex11 = new ExcuseModel(2, "Too much leg chaffing today");
@@ -340,6 +345,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex122, db);
         createExcuses(ex123, db);
         createExcuses(ex128, db);
+        createExcuses(ex130, db);
+        createExcuses(ex131, db);
+        createExcuses(ex132, db);
+        createExcuses(ex133, db);
+        createExcuses(ex134, db);
 
         createExcuses(ex11, db);
         createExcuses(ex12, db);

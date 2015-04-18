@@ -2,7 +2,6 @@ package com.rodriguez.theexcusebook;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
@@ -20,6 +19,9 @@ import android.widget.TextView;
 
 import Controllers.DefaultController;
 import Utilities.ShakeEventListener;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class ExcuseMe extends ActionBarActivity {
 
@@ -41,6 +43,10 @@ public class ExcuseMe extends ActionBarActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(getResources().getColor(R.color.primary_dark));
         }
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         btnExcuseMe = (Button)findViewById(R.id.btnExcuseMe);
         txtSportName = (TextView)findViewById(R.id.txtSportName);
