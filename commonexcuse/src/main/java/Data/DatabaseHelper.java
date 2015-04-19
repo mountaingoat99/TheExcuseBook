@@ -207,6 +207,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex132 = new ExcuseModel(1, "Rode too hard yesterday");
         ExcuseModel ex133 = new ExcuseModel(1, "Someone bumped me at the start");
         ExcuseModel ex134 = new ExcuseModel(1, "I was too overgeared");
+        ExcuseModel ex135 = new ExcuseModel(1, "My CO2 was empty");
+        ExcuseModel ex136 = new ExcuseModel(1, "'Insert Name Here' was in my way");
+        ExcuseModel ex137 = new ExcuseModel(1, "Was stuck in lapped traffic");
+        ExcuseModel ex138 = new ExcuseModel(1, "Aunt Flow is visiting");
+        ExcuseModel ex139 = new ExcuseModel(1, "Forgot my shoes");
+        ExcuseModel ex140 = new ExcuseModel(1, "Lens were too dark/too light");
+        ExcuseModel ex141 = new ExcuseModel(1, "Chain suck");
+        ExcuseModel ex142 = new ExcuseModel(1, "Brakes were rubbing");
+        ExcuseModel ex143 = new ExcuseModel(1, "Lost my gels");
+        ExcuseModel ex144 = new ExcuseModel(1, "Missed my feed");
+        ExcuseModel ex145 = new ExcuseModel(1, "Ran out of water");
 
         // Running excuses
         ExcuseModel ex11 = new ExcuseModel(2, "Too much leg chaffing today");
@@ -242,36 +253,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex42 = new ExcuseModel(4, "I slipped");
         ExcuseModel ex43 = new ExcuseModel(4, "The board had no bounce");
         ExcuseModel ex44 = new ExcuseModel(4, "The board had too much bounce");
-        ExcuseModel ex45 = new ExcuseModel(4, "test1");
-        ExcuseModel ex46 = new ExcuseModel(4, "test1");
-        ExcuseModel ex47 = new ExcuseModel(4, "test1");
-        ExcuseModel ex48 = new ExcuseModel(4, "test1");
-        ExcuseModel ex49 = new ExcuseModel(4, "test1");
-        ExcuseModel ex50 = new ExcuseModel(4, "test1");
+        ExcuseModel ex45 = new ExcuseModel(4, "I have water in my ears");
+        ExcuseModel ex46 = new ExcuseModel(4, "Too much chlorine in the pool");
+        ExcuseModel ex47 = new ExcuseModel(4, "The water was too cold");
+        ExcuseModel ex48 = new ExcuseModel(4, "That was not my best dive");
+        ExcuseModel ex49 = new ExcuseModel(4, "The board was too old");
+        ExcuseModel ex50 = new ExcuseModel(4, "The pool didn't seem deep enough");
 
         // Swimming Excuses
         ExcuseModel ex51 = new ExcuseModel(5, "I broke my taper");
-        ExcuseModel ex52 = new ExcuseModel(5, "test1");
-        ExcuseModel ex53 = new ExcuseModel(5, "test1");
-        ExcuseModel ex54 = new ExcuseModel(5, "test1");
-        ExcuseModel ex55 = new ExcuseModel(5, "test1");
-        ExcuseModel ex56 = new ExcuseModel(5, "test1");
-        ExcuseModel ex57 = new ExcuseModel(5, "test1");
-        ExcuseModel ex58 = new ExcuseModel(5, "test1");
-        ExcuseModel ex59 = new ExcuseModel(5, "test1");
-        ExcuseModel ex60 = new ExcuseModel(5, "test1");
+        ExcuseModel ex52 = new ExcuseModel(5, "Drank too much Gatorade");
+        ExcuseModel ex53 = new ExcuseModel(5, "I didn't eat enough");
+        ExcuseModel ex54 = new ExcuseModel(5, "The pool was too hot");
+        ExcuseModel ex55 = new ExcuseModel(5, "I have a paddle related injury");
+        ExcuseModel ex56 = new ExcuseModel(5, "My goggles are broken");
+        ExcuseModel ex57 = new ExcuseModel(5, "I have water in my ears");
+        ExcuseModel ex58 = new ExcuseModel(5, "I have foot/ankle/knee/calf/forehead cramps");
+        ExcuseModel ex59 = new ExcuseModel(5, "My suit is falling apart");
+        ExcuseModel ex60 = new ExcuseModel(5, "Too much chlorine in the pool");
+        ExcuseModel ex147 = new ExcuseModel(5, "The water was too cold");
+        ExcuseModel ex148 = new ExcuseModel(5, "I didn't hear the start horn");
+        ExcuseModel ex149 = new ExcuseModel(5, "I hate that stroke");
+        ExcuseModel ex150 = new ExcuseModel(5, "I slipped on the block");
+        ExcuseModel ex151 = new ExcuseModel(5, "My feet slipped on the turn");
+        ExcuseModel ex152 = new ExcuseModel(5, "I forgot my swimsuit");
 
         // Triathlon
-        ExcuseModel ex61 = new ExcuseModel(6, "test1");
-        ExcuseModel ex62 = new ExcuseModel(6, "test1");
-        ExcuseModel ex63 = new ExcuseModel(6, "test1");
-        ExcuseModel ex64 = new ExcuseModel(6, "test1");
-        ExcuseModel ex65 = new ExcuseModel(6, "test1");
-        ExcuseModel ex66 = new ExcuseModel(6, "test1");
-        ExcuseModel ex67 = new ExcuseModel(6, "test1");
-        ExcuseModel ex68 = new ExcuseModel(6, "test1");
-        ExcuseModel ex69 = new ExcuseModel(6, "test1");
-        ExcuseModel ex70 = new ExcuseModel(6, "test1");
+        ExcuseModel ex61 = new ExcuseModel(6, "I over-trained");
+        ExcuseModel ex62 = new ExcuseModel(6, "I under-trained");
+        ExcuseModel ex63 = new ExcuseModel(6, "Saddle was 1 cm too high");
+        ExcuseModel ex64 = new ExcuseModel(6, "I didn't have my carbon wheels");
+        ExcuseModel ex65 = new ExcuseModel(6, "These weren't the right shoes");
+        ExcuseModel ex66 = new ExcuseModel(6, "I screwed up my taper");
+        ExcuseModel ex67 = new ExcuseModel(6, "Water was too cold");
+        ExcuseModel ex68 = new ExcuseModel(6, "Water was too hot");
+        ExcuseModel ex69 = new ExcuseModel(6, "Too much headwind");
+        ExcuseModel ex70 = new ExcuseModel(6, "Too many crosswinds");
+        ExcuseModel ex153 = new ExcuseModel(6, "Someone bumped me in the swim");
+        ExcuseModel ex154 = new ExcuseModel(6, "I was too overgeared");
+        ExcuseModel ex155 = new ExcuseModel(6, "Brakes were rubbing");
+        ExcuseModel ex156 = new ExcuseModel(6, "Lost my gels");
+        ExcuseModel ex157 = new ExcuseModel(6, "Missed my feed");
+        ExcuseModel ex158 = new ExcuseModel(6, "Ran out of water");
+        ExcuseModel ex159 = new ExcuseModel(6, "My transitions sucked");
+        ExcuseModel ex160 = new ExcuseModel(6, "I was just running it as a training run");
+        ExcuseModel ex161 = new ExcuseModel(6, "My compression shorts were on backwards");
+        ExcuseModel ex162 = new ExcuseModel(6, "No one took the pace out quick enough");
+        ExcuseModel ex163 = new ExcuseModel(6, "I'm saving it for 'Insert Next Race Here'");
+        ExcuseModel ex164 = new ExcuseModel(6, "I sprinted the first mile so that I could be in the photo");
+        ExcuseModel ex165 = new ExcuseModel(6, "My transitions sucked");
 
         // AM Football excuses
         ExcuseModel ex71 = new ExcuseModel(7, "I was hungover");
@@ -281,9 +311,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex75 = new ExcuseModel(7, "Our division is too tough");
         ExcuseModel ex76 = new ExcuseModel(7, "My teammates really suck");
         ExcuseModel ex77 = new ExcuseModel(7, "We had our backup QB playing");
-        ExcuseModel ex78 = new ExcuseModel(7, "test1");
-        ExcuseModel ex79 = new ExcuseModel(7, "test1");
-        ExcuseModel ex80 = new ExcuseModel(7, "test1");
+        ExcuseModel ex78 = new ExcuseModel(7, "Couldn't recover from yesterday's workout");
+        ExcuseModel ex79 = new ExcuseModel(7, "We never play well after a bye week");
+        ExcuseModel ex80 = new ExcuseModel(7, "If only out kicker made that 50-yarder");
 
         // Baseball excuses
         ExcuseModel ex81 = new ExcuseModel(8, "Sun was in my eyes");
@@ -305,9 +335,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex95 = new ExcuseModel(9, "We have too many injuries");
         ExcuseModel ex96 = new ExcuseModel(9, "My teammates really suck");
         ExcuseModel ex97 = new ExcuseModel(9, "We had the backup goalie playing");
-        ExcuseModel ex98 = new ExcuseModel(9, "test1");
-        ExcuseModel ex99 = new ExcuseModel(9, "test1");
-        ExcuseModel ex100 = new ExcuseModel(9, "test1");
+        ExcuseModel ex98 = new ExcuseModel(9, "Couldn’t get the volume of noise from our fans that we got in the last game");
+        ExcuseModel ex99 = new ExcuseModel(9, "Our style means we need a bigger space to play because we play a positional game");
+        ExcuseModel ex100 = new ExcuseModel(9, "The balls were too bouncy");
+        ExcuseModel ex146 = new ExcuseModel(9, "We played very well in the first half, but maybe it was too cold in the second half");
 
         // Golf excuses
         ExcuseModel ex101 = new ExcuseModel(10, "Didn't warm up");
@@ -350,6 +381,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex132, db);
         createExcuses(ex133, db);
         createExcuses(ex134, db);
+        createExcuses(ex135, db);
+        createExcuses(ex136, db);
+        createExcuses(ex137, db);
+        createExcuses(ex138, db);
+        createExcuses(ex139, db);
+        createExcuses(ex140, db);
+        createExcuses(ex141, db);
+        createExcuses(ex142, db);
+        createExcuses(ex143, db);
+        createExcuses(ex144, db);
+        createExcuses(ex145, db);
 
         createExcuses(ex11, db);
         createExcuses(ex12, db);
@@ -399,6 +441,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex58, db);
         createExcuses(ex59, db);
         createExcuses(ex60, db);
+        createExcuses(ex147, db);
+        createExcuses(ex148, db);
+        createExcuses(ex149, db);
+        createExcuses(ex150, db);
+        createExcuses(ex151, db);
+        createExcuses(ex152, db);
 
         createExcuses(ex61, db);
         createExcuses(ex62, db);
@@ -410,6 +458,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex68, db);
         createExcuses(ex69, db);
         createExcuses(ex70, db);
+        createExcuses(ex153, db);
+        createExcuses(ex154, db);
+        createExcuses(ex155, db);
+        createExcuses(ex156, db);
+        createExcuses(ex157, db);
+        createExcuses(ex158, db);
+        createExcuses(ex159, db);
+        createExcuses(ex160, db);
+        createExcuses(ex161, db);
+        createExcuses(ex162, db);
+        createExcuses(ex163, db);
+        createExcuses(ex164, db);
+        createExcuses(ex165, db);
 
         createExcuses(ex71, db);
         createExcuses(ex72, db);
@@ -443,6 +504,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex98, db);
         createExcuses(ex99, db);
         createExcuses(ex100, db);
+        createExcuses(ex146, db);
 
         createExcuses(ex101, db);
         createExcuses(ex102, db);
