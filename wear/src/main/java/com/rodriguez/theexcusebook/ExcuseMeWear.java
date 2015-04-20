@@ -3,6 +3,7 @@ package com.rodriguez.theexcusebook;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
@@ -14,7 +15,7 @@ import Controllers.DefaultController;
 
 public class ExcuseMeWear extends Activity {
 
-    private ImageButton mbtnExcuseMe;
+    private Button mbtnExcuseMe;
     public static final String TAG = "MAIN_ACTIVITY";
     private int sportId = 0;
     private final Context context = this;
@@ -29,19 +30,22 @@ public class ExcuseMeWear extends Activity {
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
-                mbtnExcuseMe = (ImageButton) stub.findViewById(R.id.btnExcuseMe);
+                mbtnExcuseMe = (Button) stub.findViewById(R.id.btnExcuseMe);
+                mbtnExcuseMe.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, ShowExcuseWear.class);
+                        Bundle b = new Bundle();
+                        b.putInt("sportId", sportId);
+                        intent.putExtras(b);
+                        startActivity(intent);
+                    }
+                });
             }
         });
 
         checkDefaultSport();
-    }
-
-    public void setContentView(View v){
-        Intent intent = new Intent(context, ShowExcuseWear.class);
-        Bundle b = new Bundle();
-        b.putInt("sportId", sportId);
-        intent.putExtras(b);
-        startActivity(intent);
     }
 
     public void checkDefaultSport() {

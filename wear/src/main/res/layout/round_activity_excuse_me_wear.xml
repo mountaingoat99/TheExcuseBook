@@ -7,16 +7,16 @@
     tools:deviceIds="wear_round"
     android:background="@color/primary_material_light">
 
-    <ImageButton
+    <Button
         android:id="@+id/btnExcuseMe"
-        android:onClick="setContentView"
+        android:text="@string/excuse_me"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:src="@drawable/button_state"
-        android:background="@color/primary_material_light"
+        android:background="@drawable/buttonshape"
+        android:textColor="@drawable/button_state"
         android:contentDescription="@string/excuse_me" />
 
 </RelativeLayout>

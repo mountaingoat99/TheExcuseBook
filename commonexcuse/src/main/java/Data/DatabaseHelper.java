@@ -335,7 +335,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex95 = new ExcuseModel(9, "We have too many injuries");
         ExcuseModel ex96 = new ExcuseModel(9, "My teammates really suck");
         ExcuseModel ex97 = new ExcuseModel(9, "We had the backup goalie playing");
-        ExcuseModel ex98 = new ExcuseModel(9, "Couldn’t get the volume of noise from our fans that we got in the last game");
+        ExcuseModel ex98 = new ExcuseModel(9, "Couldn't get the volume of noise from our fans that we got in the last game");
         ExcuseModel ex99 = new ExcuseModel(9, "Our style means we need a bigger space to play because we play a positional game");
         ExcuseModel ex100 = new ExcuseModel(9, "The balls were too bouncy");
         ExcuseModel ex146 = new ExcuseModel(9, "We played very well in the first half, but maybe it was too cold in the second half");
