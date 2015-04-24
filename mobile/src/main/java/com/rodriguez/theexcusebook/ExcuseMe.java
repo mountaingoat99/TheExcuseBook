@@ -26,7 +26,6 @@ import com.google.android.gms.ads.AdView;
 public class ExcuseMe extends ActionBarActivity {
 
     private Button btnExcuseMe;
-    private TextView txtSportName;
     private SensorManager mSensorManager;
     private ShakeEventListener mSensorListener;
     public static int sportId = 0;
@@ -49,7 +48,6 @@ public class ExcuseMe extends ActionBarActivity {
         mAdView.loadAd(adRequest);
 
         btnExcuseMe = (Button)findViewById(R.id.btnExcuseMe);
-        txtSportName = (TextView)findViewById(R.id.txtSportName);
 
         checkDefaultSport();
         addListenerOnButton();
@@ -75,7 +73,7 @@ public class ExcuseMe extends ActionBarActivity {
         sportName = DefaultController.DefaultSportName(sportId, context);
         Log.e("Default SportID is", String.valueOf(sportId));
         Log.e("Default SportName is", sportName);
-        txtSportName.setText(sportName);
+        //TODO here we need to set the correct book background
     }
 
     @Override

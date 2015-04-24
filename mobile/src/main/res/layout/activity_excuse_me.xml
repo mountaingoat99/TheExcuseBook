@@ -6,29 +6,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".ExcuseMe">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ExcuseMe"
+    android:background="@mipmap/bike_book_closed">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         style="?android:attr/borderlessButtonStyle"
-        android:text="@string/excuse_me"
         android:id="@+id/btnExcuseMe"
-        android:textSize="@dimen/button_text_large"
-        android:textColor="@color/icons"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/txtSportName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnExcuseMe"
-        android:layout_marginTop="8dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/text_size_medium"
-        android:textColor="@color/primary_text"/>
+        android:hapticFeedbackEnabled="true"
+        android:background="@color/clear"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -41,4 +31,6 @@
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>
+
+
 
