@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import Controllers.DefaultController;
@@ -73,7 +74,18 @@ public class ExcuseMe extends ActionBarActivity {
         sportName = DefaultController.DefaultSportName(sportId, context);
         Log.e("Default SportID is", String.valueOf(sportId));
         Log.e("Default SportName is", sportName);
-        //TODO here we need to set the correct book background
+        ChangeBackground();
+    }
+
+    public void ChangeBackground() {
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.excuse_me_layout);
+        switch (sportId){
+            case 1:
+                layout.setBackgroundResource(R.mipmap.bike_book_closed);
+                break;
+            case 2:
+                layout.setBackgroundResource(R.mipmap.run_book_closed);
+        }
     }
 
     @Override
