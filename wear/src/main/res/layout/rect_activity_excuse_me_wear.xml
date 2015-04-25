@@ -8,16 +8,15 @@
     android:orientation="vertical"
     tools:context=".ExcuseMeWear"
     tools:deviceIds="wear_square"
-    android:background="@color/primary_material_light"
+    android:background="@color/primary"
     app:layout_box="all">
 
     <Button
         android:id="@+id/btnExcuseMe"
-        android:text="@string/excuse_me"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:background="@drawable/buttonshape"
+        android:background="@mipmap/wear_button"
         android:textColor="@drawable/button_state"
         android:contentDescription="@string/excuse_me" />
 
