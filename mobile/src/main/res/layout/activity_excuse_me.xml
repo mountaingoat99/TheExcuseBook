@@ -11,6 +11,26 @@
     tools:context=".ExcuseMe"
     android:background="@mipmap/bike_book_closed">
 
+    <TextView
+        android:id="@+id/txtDefaultSport"
+        android:text=""
+        android:textSize="@dimen/text_size_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/text_background"
+        android:visibility="invisible"/>
+
     <Button
         android:layout_width="200dp"
         android:layout_height="200dp"

@@ -31,7 +31,6 @@
         </activity>
         <activity
             android:name=".showExcuse"
-            android:label="@string/title_activity_show_excuse"
             android:parentActivityName=".ExcuseMe"
             android:screenOrientation="portrait" >
             <meta-data

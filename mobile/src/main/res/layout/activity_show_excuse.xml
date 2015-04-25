@@ -10,6 +10,16 @@
     tools:context="com.rodriguez.theexcusebook.showExcuse"
     android:background="@mipmap/book_open">
 
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/btnExcuseMe"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:hapticFeedbackEnabled="true"
+        android:background="@color/clear"/>
+
     <TextView
         android:id="@+id/txtExcuse"
         android:text=""

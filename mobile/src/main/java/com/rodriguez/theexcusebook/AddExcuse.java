@@ -51,7 +51,7 @@ public class AddExcuse extends ActionBarActivity implements GoogleApiClient.Conn
         setContentView(R.layout.activity_add_excuse);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         newExcuse = (EditText)findViewById(R.id.editAddExcuse);
         btnAddExcuse = (Button)findViewById(R.id.btnAddExcuse);
 

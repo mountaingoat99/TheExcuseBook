@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.rodriguez.theexcusebook.ShowExcuseWear"
     tools:deviceIds="wear_square"
-    android:background="@color/primary_material_light">
+    android:background="@color/primary">
 
     <TextView
         android:id="@+id/txtExcusetext"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:padding="10dp"
         android:gravity="center"
+        android:layout_gravity="center_vertical|center_horizontal"
         android:textSize="20sp"
         android:textColor="@color/primary_text"
+        android:background="@drawable/text_background"
         android:text="" />
 
-</LinearLayout>
+</android.support.wearable.view.BoxInsetLayout>

@@ -24,9 +24,12 @@ import Utilities.ShakeEventListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import org.w3c.dom.Text;
+
 public class ExcuseMe extends ActionBarActivity {
 
     private Button btnExcuseMe;
+    private TextView defaultSportName;
     private SensorManager mSensorManager;
     private ShakeEventListener mSensorListener;
     public static int sportId = 0;
@@ -48,6 +51,7 @@ public class ExcuseMe extends ActionBarActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+        defaultSportName = (TextView)findViewById(R.id.txtDefaultSport);
         btnExcuseMe = (Button)findViewById(R.id.btnExcuseMe);
 
         checkDefaultSport();
@@ -82,33 +86,48 @@ public class ExcuseMe extends ActionBarActivity {
         switch (sportId){
             case 1:
                 layout.setBackgroundResource(R.mipmap.bike_book_closed);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 2:
                 layout.setBackgroundResource(R.mipmap.run_book_closed);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 3:
                 layout.setBackgroundResource(R.mipmap.ski_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 4:
                 layout.setBackgroundResource(R.mipmap.dive_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 5:
                 layout.setBackgroundResource(R.mipmap.swim_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 6:
                 layout.setBackgroundResource(R.mipmap.tri_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 7:
                 layout.setBackgroundResource(R.mipmap.am_football);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 8:
                 layout.setBackgroundResource(R.mipmap.baseball_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 9:
                 layout.setBackgroundResource(R.mipmap.football_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 10:
                 layout.setBackgroundResource(R.mipmap.golf_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
+                break;
+            default:
+                layout.setBackgroundResource(R.mipmap.default_book);
+                defaultSportName.setText(sportName);
+                defaultSportName.setVisibility(View.VISIBLE);
                 break;
         }
     }

@@ -8,8 +8,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import Controllers.ExcuseController;
@@ -20,6 +22,7 @@ import com.google.android.gms.ads.AdView;
 
 public class showExcuse extends ActionBarActivity {
 
+    private Button btnExcuseMe;
     private TextView txtShowExcuse;
     private SensorManager mSensorManager;
     private ShakeEventListener mSensorListener;
@@ -43,6 +46,7 @@ public class showExcuse extends ActionBarActivity {
         mAdView.loadAd(adRequest);
 
         txtShowExcuse = (TextView)findViewById(R.id.txtExcuse);
+        btnExcuseMe = (Button)findViewById(R.id.btnExcuseMe);
 
         Bundle b = getIntent().getExtras();
         if(b != null){
@@ -60,6 +64,7 @@ public class showExcuse extends ActionBarActivity {
             }
         });
 
+        addListenerOnButton();
         NewExcuse();
     }
 
@@ -75,6 +80,15 @@ public class showExcuse extends ActionBarActivity {
     protected void onPause() {
         mSensorManager.unregisterListener(mSensorListener);
         super.onPause();
+    }
+
+    private void addListenerOnButton(){
+        btnExcuseMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NewExcuse();
+            }
+        });
     }
 
     private void NewExcuse() {

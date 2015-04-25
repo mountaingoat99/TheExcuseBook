@@ -51,7 +51,7 @@ public class AddSport extends ActionBarActivity implements GoogleApiClient.Conne
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         newSport = (EditText)findViewById(R.id.editAddSport);
         btnAddSport = (Button)findViewById(R.id.btnAddSport);
 
