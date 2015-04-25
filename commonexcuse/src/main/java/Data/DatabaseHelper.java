@@ -302,6 +302,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex163 = new ExcuseModel(6, "I'm saving it for 'Insert Next Race Here'");
         ExcuseModel ex164 = new ExcuseModel(6, "I sprinted the first mile so that I could be in the photo");
         ExcuseModel ex165 = new ExcuseModel(6, "My transitions sucked");
+        ExcuseModel ex166 = new ExcuseModel(6, "Didn't swim well, water felt too wet");
+        ExcuseModel ex167 = new ExcuseModel(6, "Didn't draft on the bike so my run sucked");
+        ExcuseModel ex168 = new ExcuseModel(6, "It was raining");
+        ExcuseModel ex169 = new ExcuseModel(6, "Can't go hard, I have a big brick workout this week");
+        ExcuseModel ex170 = new ExcuseModel(6, "I would be faster, but I have a life");
+        ExcuseModel ex171 = new ExcuseModel(6, "I could PR that but it was too windy");
+        ExcuseModel ex172 = new ExcuseModel(6, "They must have been doping");
+        ExcuseModel ex173 = new ExcuseModel(6, "My wetsuit was too tight");
 
         // AM Football excuses
         ExcuseModel ex71 = new ExcuseModel(7, "I was hungover");
@@ -471,6 +479,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex163, db);
         createExcuses(ex164, db);
         createExcuses(ex165, db);
+        createExcuses(ex166, db);
+        createExcuses(ex167, db);
+        createExcuses(ex168, db);
+        createExcuses(ex169, db);
+        createExcuses(ex170, db);
+        createExcuses(ex171, db);
+        createExcuses(ex172, db);
+        createExcuses(ex173, db);
 
         createExcuses(ex71, db);
         createExcuses(ex72, db);
