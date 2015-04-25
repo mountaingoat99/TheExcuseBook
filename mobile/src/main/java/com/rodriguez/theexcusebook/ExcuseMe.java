@@ -87,7 +87,19 @@ public class ExcuseMe extends ActionBarActivity {
                 layout.setBackgroundResource(R.mipmap.run_book_closed);
                 break;
             case 3:
+                layout.setBackgroundResource(R.mipmap.ski_book);
+                break;
+            case 4:
                 layout.setBackgroundResource(R.mipmap.dive_book);
+                break;
+            case 5:
+                layout.setBackgroundResource(R.mipmap.swim_book);
+                break;
+            case 6:
+                layout.setBackgroundResource(R.mipmap.tri_book);
+                break;
+            case 7:
+                layout.setBackgroundResource(R.mipmap.am_football);
                 break;
         }
     }
