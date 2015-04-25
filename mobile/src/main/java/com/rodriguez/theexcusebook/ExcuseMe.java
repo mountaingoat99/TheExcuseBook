@@ -88,6 +88,7 @@ public class ExcuseMe extends ActionBarActivity {
                 break;
             case 3:
                 layout.setBackgroundResource(R.mipmap.dive_book);
+                break;
         }
     }
 
