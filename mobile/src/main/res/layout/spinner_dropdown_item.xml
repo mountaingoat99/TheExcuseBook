@@ -8,7 +8,7 @@
     android:singleLine="true"
     android:ellipsize="marquee"
     android:textSize="@dimen/text_size_small"
-    android:textColor="@color/icons"
-    android:background="@color/primary">
+    android:textColor="@color/primary_text"
+    android:background="@drawable/layer_card_background_spinner">
 
 </CheckedTextView>

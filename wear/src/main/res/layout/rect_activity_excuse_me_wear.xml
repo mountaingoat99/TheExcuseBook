@@ -16,7 +16,7 @@
         android:layout_height="130dp"
         android:layout_width="130dp"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:background="@mipmap/wear_button_new"
+        android:background="@mipmap/ic_excuse_button_wear"
         android:textColor="@drawable/button_state"
         android:contentDescription="@string/excuse_me" />
 

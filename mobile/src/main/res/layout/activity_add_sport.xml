@@ -1,53 +1,83 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/dialog_horizontal_margin"
     android:paddingRight="@dimen/dialog_horizontal_margin"
-    android:paddingTop="@dimen/dialog_vertical_margin"
-    android:paddingBottom="@dimen/dialog_vertical_margin"
+    android:paddingTop="@dimen/dialog_horizontal_margin"
+    android:paddingBottom="@dimen/dialog_horizontal_margin"
     tools:context="com.rodriguez.theexcusebook.AddSport"
-    android:background="@color/background">
+    android:background="@color/primary">
 
-    <EditText
-        android:id="@+id/editAddSport"
-        android:hint="@string/enter_new_sport"
-        android:textColorHint="@color/material_blue_grey_800"
-        android:background="@drawable/layout_selector"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textCapWords"
-        android:textSize="@dimen/text_size_small"
-        android:textColor="@color/primary_text"
-        android:textCursorDrawable="@null">
-        <requestFocus/>
-    </EditText>
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout1"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingBottom="8dp"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingStart="8dp"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:paddingEnd="8dp"-->
+        <!--android:background="@drawable/layer_card_dialog">-->
 
-    <View
-        android:id="@+id/line1"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/editAddSport"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/primary" />
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="8dp"
+            android:background="@drawable/layer_card_dialog">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="?android:attr/borderlessButtonStyle"
-        android:text="@string/new_sport"
-        android:id="@+id/btnAddSport"
-        android:textSize="@dimen/button_text_medium"
-        android:layout_below="@+id/line1"
-        android:layout_alignRight="@+id/editAddSport"
-        android:layout_alignEnd="@+id/editAddSport"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/primary_dark"/>
+            <EditText
+                android:id="@+id/editAddSport"
+                android:hint="@string/enter_new_sport"
+                android:textColorHint="@color/material_blue_grey_800"
+                android:background="@drawable/layout_selector"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="textCapWords"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/primary_text"
+                android:textCursorDrawable="@null">
+                <requestFocus/>
+            </EditText>
 
-</RelativeLayout>
+            <View
+                android:id="@+id/line1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/editAddSport"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/primary" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="@string/new_sport"
+                android:id="@+id/btnAddSport"
+                android:textSize="@dimen/button_text_medium"
+                android:layout_below="@+id/line1"
+                android:layout_alignRight="@+id/editAddSport"
+                android:layout_alignEnd="@+id/editAddSport"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/primary_dark"/>
+
+        </RelativeLayout>
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>

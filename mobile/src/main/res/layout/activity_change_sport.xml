@@ -1,35 +1,54 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/dialog_horizontal_margin"
     android:paddingRight="@dimen/dialog_horizontal_margin"
-    android:paddingTop="@dimen/dialog_vertical_margin"
-    android:paddingBottom="@dimen/dialog_vertical_margin"
+    android:paddingTop="@dimen/dialog_horizontal_margin"
+    android:paddingBottom="@dimen/dialog_horizontal_margin"
     tools:context="com.rodriguez.theexcusebook.ChangeSport"
     android:background="@color/primary">
 
-    <Spinner
-        android:id="@+id/spinnerChooseSport"
+    <RelativeLayout
+        android:id="@+id/layout1"
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="?android:attr/borderlessButtonStyle"
-        android:text="@string/update_sport"
-        android:id="@+id/btnUpdateSport"
-        android:textSize="@dimen/button_text_small"
-        android:layout_below="@+id/spinnerChooseSport"
-        android:layout_alignRight="@+id/spinnerChooseSport"
-        android:layout_alignEnd="@+id/spinnerChooseSport"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/icons"/>
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingStart="8dp"
+        android:paddingRight="8dp"
+        android:paddingEnd="8dp"
+        android:background="@drawable/layer_card_dialog">
 
-</RelativeLayout>
+
+
+            <Spinner
+                android:id="@+id/spinnerChooseSport"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="@string/update_sport"
+                android:id="@+id/btnUpdateSport"
+                android:textSize="@dimen/button_text_medium"
+                android:layout_below="@+id/spinnerChooseSport"
+                android:layout_alignRight="@+id/spinnerChooseSport"
+                android:layout_alignEnd="@+id/spinnerChooseSport"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/primary_dark"/>
+
+        </RelativeLayout>
+
+
+
+</LinearLayout>
