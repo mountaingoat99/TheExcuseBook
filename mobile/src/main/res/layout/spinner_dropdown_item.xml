@@ -9,6 +9,6 @@
     android:ellipsize="marquee"
     android:textSize="@dimen/text_size_small"
     android:textColor="@color/icons"
-    android:background="@color/primary_dark">
+    android:background="@color/primary">
 
 </CheckedTextView>

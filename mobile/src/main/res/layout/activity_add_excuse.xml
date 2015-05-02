@@ -6,11 +6,12 @@
     android:paddingTop="@dimen/dialog_vertical_margin"
     android:paddingBottom="@dimen/dialog_vertical_margin"
     tools:context="com.rodriguez.theexcusebook.AddExcuse"
-    android:background="@color/primary_dark">
+    android:background="@color/background">
 
     <EditText
         android:id="@+id/editAddExcuse"
         android:hint="@string/enter_new_excuse"
+        android:textColorHint="@color/material_blue_grey_800"
         android:background="@drawable/layout_selector"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
@@ -21,11 +22,20 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textCapWords"
-        android:textSize="@dimen/text_size_medium"
-        android:textColor="@color/primary_light"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/primary_text"
         android:textCursorDrawable="@null">
         <requestFocus/>
     </EditText>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/editAddExcuse"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/primary" />
 
     <Button
         android:layout_width="wrap_content"
@@ -33,11 +43,11 @@
         style="?android:attr/borderlessButtonStyle"
         android:text="@string/add_new_excuse"
         android:id="@+id/btnAddExcuse"
-        android:textSize="@dimen/button_text_small"
-        android:layout_below="@+id/editAddExcuse"
+        android:textSize="@dimen/button_text_medium"
+        android:layout_below="@+id/line1"
         android:layout_alignRight="@+id/editAddExcuse"
         android:layout_alignEnd="@+id/editAddExcuse"
         android:layout_marginBottom="8dp"
-        android:textColor="@color/icons"/>
+        android:textColor="@color/primary_dark"/>
 
 </RelativeLayout>

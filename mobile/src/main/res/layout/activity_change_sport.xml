@@ -7,7 +7,7 @@
     android:paddingTop="@dimen/dialog_vertical_margin"
     android:paddingBottom="@dimen/dialog_vertical_margin"
     tools:context="com.rodriguez.theexcusebook.ChangeSport"
-    android:background="@color/primary_dark">
+    android:background="@color/primary">
 
     <Spinner
         android:id="@+id/spinnerChooseSport"

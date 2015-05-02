@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".ExcuseMeWear"
     tools:deviceIds="wear_square"
-    android:background="@color/primary"
+    android:background="@color/background"
     app:layout_box="all">
 
     <Button
