@@ -17,14 +17,42 @@ import android.widget.ImageButton;
 
 import Controllers.DefaultController;
 
-public class ExcuseMeWear extends Activity implements SensorEventListener {
+public class ExcuseMeWear extends Activity  {
 
     private Button mbtnExcuseMe;
     public static final String TAG = "MAIN_ACTIVITY";
     private int sportId = 0;
     private final Context context = this;
     private SensorManager mSensorManager;
-    private Sensor mShake;
+    private float mAccel; // acceleration apart from gravity
+    private float mAccelCurrent; // current acceleration including gravity
+    private float mAccelLast; // last acceleration including gravity
+
+    private final SensorEventListener mSensorListener = new SensorEventListener() {
+
+        public void onSensorChanged(SensorEvent se) {
+            float x = se.values[0];
+            float y = se.values[1];
+            float z = se.values[2];
+            mAccelLast = mAccelCurrent;
+            mAccelCurrent = (float) Math.sqrt((double) (x*x + y*y + z*z));
+            float delta = mAccelCurrent - mAccelLast;
+            mAccel = mAccel * 0.9f + delta; // perform low-cut filter
+
+            if (mAccel > 2) {
+
+                Intent intent = new Intent(context, ShowExcuseWear.class);
+                Bundle b = new Bundle();
+                b.putInt("sportId", sportId);
+                intent.putExtras(b);
+                startActivity(intent);
+
+            }
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +79,11 @@ public class ExcuseMeWear extends Activity implements SensorEventListener {
             }
         });
 
-        mSensorManager = (SensorManager) getSystemService(context.SENSOR_SERVICE);
-        mShake = mSensorManager.getDefaultSensor(Sensor.TYPE_SIGNIFICANT_MOTION);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+        mAccel = 0.00f;
+        mAccelCurrent = SensorManager.GRAVITY_EARTH;
+        mAccelLast = SensorManager.GRAVITY_EARTH;
 
         checkDefaultSport();
     }
@@ -63,28 +94,14 @@ public class ExcuseMeWear extends Activity implements SensorEventListener {
     }
 
     @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
-        Intent intent = new Intent(context, ShowExcuseWear.class);
-        Bundle b = new Bundle();
-        b.putInt("sportId", sportId);
-        intent.putExtras(b);
-        startActivity(intent);
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int i) {
-
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
-       mSensorManager.registerListener(this, mShake, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
     protected void onPause() {
+        mSensorManager.unregisterListener(mSensorListener);
         super.onPause();
-        mSensorManager.unregisterListener(this);
     }
 }
