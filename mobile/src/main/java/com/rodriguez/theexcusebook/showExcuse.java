@@ -18,7 +18,6 @@ import Controllers.ExcuseController;
 import Utilities.ShakeEventListener;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
 public class showExcuse extends ActionBarActivity {

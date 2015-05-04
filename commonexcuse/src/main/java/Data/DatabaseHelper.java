@@ -167,6 +167,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SportsModel sport8 = new SportsModel(8, "Baseball");
         SportsModel sport9 = new SportsModel(9, "Football(Soccer)");
         SportsModel sport10 = new SportsModel(10, "Golf");
+        SportsModel sport11 = new SportsModel(11, "Ultimate Frisbee");
+        SportsModel sport12 = new SportsModel(12, "Basketball");
 
         createSports(sport, db);
         createSports(sport1, db);
@@ -179,6 +181,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createSports(sport8, db);
         createSports(sport9, db);
         createSports(sport10, db);
+        createSports(sport11, db);
+        createSports(sport12, db);
     }
 
     private void fillExcuses(SQLiteDatabase db){
@@ -365,6 +369,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex114 = new ExcuseModel(10, "I'm better than this I swear");
         ExcuseModel ex115 = new ExcuseModel(10, "I was in between clubs for that distance");
 
+        // Ultimate Frisbee
+        ExcuseModel ex174 = new ExcuseModel(11, "I lost it in the sun");
+        ExcuseModel ex175 = new ExcuseModel(11, "I'm pretty sure I stopped rotation");
+        ExcuseModel ex176 = new ExcuseModel(11, "The wind caught it");
+        ExcuseModel ex177 = new ExcuseModel(11, "I suck");
+        ExcuseModel ex178 = new ExcuseModel(11, "I tripped");
+        ExcuseModel ex179 = new ExcuseModel(11, "The field's uneven");
+        ExcuseModel ex180 = new ExcuseModel(11, "Pick!");
+        ExcuseModel ex181 = new ExcuseModel(11, "It slipped");
+        ExcuseModel ex182 = new ExcuseModel(11, "I just put a little too much IO on it");
+        ExcuseModel ex183 = new ExcuseModel(11, "He pushed off");
+        ExcuseModel ex184 = new ExcuseModel(11, "I got turned around");
+        ExcuseModel ex185 = new ExcuseModel(11, "Disc was too floaty");
+        ExcuseModel ex186 = new ExcuseModel(11, "I had the wrong grip");
+        ExcuseModel ex187 = new ExcuseModel(11, "I guess it's too windy for a hammer");
+        ExcuseModel ex188 = new ExcuseModel(11, "I misread it");
+        ExcuseModel ex189 = new ExcuseModel(11, "I think this is a 200 gram disc");
+
+        // Basketball excuses
+        ExcuseModel ex190 = new ExcuseModel(12, "I got fouled");
+        ExcuseModel ex191 = new ExcuseModel(12, "It felt great out of my hand");
+        ExcuseModel ex192 = new ExcuseModel(12, "I thought you were gonna cut");
+        ExcuseModel ex193 = new ExcuseModel(12, "These aren't my good shoes");
+        ExcuseModel ex194 = new ExcuseModel(12, "This ball's too bouncy");
+        ExcuseModel ex195 = new ExcuseModel(12, "This ball's too flat");
+        ExcuseModel ex196 = new ExcuseModel(12, "I'm just getting warmed up");
+        ExcuseModel ex197 = new ExcuseModel(12, "I haven't played in awhile");
+        ExcuseModel ex198 = new ExcuseModel(12, "The floor's too slippery");
+        ExcuseModel ex199 = new ExcuseModel(12, "I think that's a girl's ball");
+        ExcuseModel ex200 = new ExcuseModel(12, "It slipped");
+        ExcuseModel ex201 = new ExcuseModel(12, "I forgot to keep my elbows in");
+        ExcuseModel ex202 = new ExcuseModel(12, "I usually make those");
+        ExcuseModel ex203 = new ExcuseModel(12, "I think the floor's uneven");
+        ExcuseModel ex204 = new ExcuseModel(12, "I thought he was going the other way");
+        ExcuseModel ex205 = new ExcuseModel(12, "I thought I was closer to the hoop");
+        ExcuseModel ex206 = new ExcuseModel(12, "The ball's too slippery");
+        ExcuseModel ex207 = new ExcuseModel(12, "I don't think this ball is round");
+
         createExcuses(ex1, db);
         createExcuses(ex2, db);
         createExcuses(ex3, db);
@@ -537,5 +579,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex113, db);
         createExcuses(ex114, db);
         createExcuses(ex115, db);
+
+        createExcuses(ex174, db);
+        createExcuses(ex175, db);
+        createExcuses(ex176, db);
+        createExcuses(ex177, db);
+        createExcuses(ex178, db);
+        createExcuses(ex179, db);
+        createExcuses(ex180, db);
+        createExcuses(ex181, db);
+        createExcuses(ex182, db);
+        createExcuses(ex183, db);
+        createExcuses(ex184, db);
+        createExcuses(ex185, db);
+        createExcuses(ex186, db);
+        createExcuses(ex187, db);
+        createExcuses(ex188, db);
+        createExcuses(ex189, db);
+
+        createExcuses(ex190, db);
+        createExcuses(ex191, db);
+        createExcuses(ex192, db);
+        createExcuses(ex193, db);
+        createExcuses(ex194, db);
+        createExcuses(ex195, db);
+        createExcuses(ex196, db);
+        createExcuses(ex197, db);
+        createExcuses(ex198, db);
+        createExcuses(ex199, db);
+        createExcuses(ex200, db);
+        createExcuses(ex201, db);
+        createExcuses(ex202, db);
+        createExcuses(ex203, db);
+        createExcuses(ex204, db);
+        createExcuses(ex205, db);
+        createExcuses(ex206, db);
+        createExcuses(ex207, db);
+
     }
 }

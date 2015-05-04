@@ -3,23 +3,48 @@ package com.rodriguez.theexcusebook;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
 import android.support.wearable.view.WatchViewStub;
 import android.widget.TextView;
-
-import java.util.List;
 
 import Controllers.ExcuseController;
 
 public class ShowExcuseWear extends Activity {
 
-    //private TextView mTextView;
     private int sportId;
     private String showExcuse = null;
     private final Context context = this;
+    private SensorManager mSensorManager;
+    private float mAccel; // acceleration apart from gravity
+    private float mAccelCurrent; // current acceleration including gravity
+    private float mAccelLast; // last acceleration including gravity
 
-    //private static final int SPEECH_REQUEST_CODE = 0;
+    private final SensorEventListener mSensorListener = new SensorEventListener() {
+
+        public void onSensorChanged(SensorEvent se) {
+            float x = se.values[0];
+            float y = se.values[1];
+            float z = se.values[2];
+            mAccelLast = mAccelCurrent;
+            mAccelCurrent = (float) Math.sqrt((double) (x*x + y*y + z*z));
+            float delta = mAccelCurrent - mAccelLast;
+            mAccel = mAccel * 0.9f + delta; // perform low-cut filter
+
+            if (mAccel > 2) {
+
+                Intent intent = new Intent(context, ExcuseMeWear.class);
+                startActivity(intent);
+
+            }
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,50 +54,39 @@ public class ShowExcuseWear extends Activity {
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
-                //mTextView = (TextView) stub.findViewById(R.id.txtExcusetext);
 
                 Bundle b = getIntent().getExtras();
                 if (b != null) {
                     sportId = b.getInt("sportId");
                 }
 
-                //displaySpeechRecognizer();
-
                 NewExcuse();
             }
         });
+
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+        mAccel = 0.00f;
+        mAccelCurrent = SensorManager.GRAVITY_EARTH;
+        mAccelLast = SensorManager.GRAVITY_EARTH;
     }
-
-    // Create an intent that can start the Speech Recognizer activity
-//    private void displaySpeechRecognizer() {
-//        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-//        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-//                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-//        // Start the activity, the intent will be populated with the speech text
-//        startActivityForResult(intent, SPEECH_REQUEST_CODE);
-//    }
-
-    // This callback is invoked when the Speech Recognizer returns.
-    // This is where you process the intent and extract the speech text from the intent.
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode,
-//                                    Intent data) {
-//        if (requestCode == SPEECH_REQUEST_CODE && resultCode == RESULT_OK) {
-//            List<String> results = data.getStringArrayListExtra(
-//                    RecognizerIntent.EXTRA_RESULTS);
-//            String spokenText = results.get(0);
-//            // Do something with spokenText
-//            if (spokenText.equals("ExcuseMe")){
-//                NewExcuse();
-//            }
-//        }
-//        super.onActivityResult(requestCode, resultCode, data);
-//    }
 
     private void NewExcuse() {
         final TextView mTextView = (TextView)findViewById(R.id.txtExcusetext);
         ExcuseController ec = new ExcuseController();
         showExcuse = ec.FindExcuse(sportId, context);
         mTextView.setText(showExcuse);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        mSensorManager.unregisterListener(mSensorListener);
+        super.onPause();
     }
 }

@@ -17,15 +17,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import Controllers.DefaultController;
 import Utilities.ShakeEventListener;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-
-import org.w3c.dom.Text;
 
 public class ExcuseMe extends ActionBarActivity {
 
@@ -125,6 +123,14 @@ public class ExcuseMe extends ActionBarActivity {
                 layout.setBackgroundResource(R.mipmap.golf_book);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
+            case 11:
+                layout.setBackgroundResource(R.mipmap.frisbee_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
+                break;
+            case 12:
+                layout.setBackgroundResource(R.mipmap.basketball_book);
+                defaultSportName.setVisibility(View.INVISIBLE);
+                break;
             default:
                 layout.setBackgroundResource(R.mipmap.default_book);
                 defaultSportName.setText(sportName);
@@ -184,6 +190,18 @@ public class ExcuseMe extends ActionBarActivity {
             case R.id.add_sport:
                 Intent intent2 = new Intent(context, AddSport.class);
                 startActivity(intent2);
+                break;
+            case R.id.email_me:
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"jeremey.rodriguez@outlook.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT, "Excuse Book Feedback");
+                //i.putExtra(Intent.EXTRA_TEXT   , "body of email");
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
 
