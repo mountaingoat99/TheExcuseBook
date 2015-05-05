@@ -386,6 +386,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ExcuseModel ex187 = new ExcuseModel(11, "I guess it's too windy for a hammer");
         ExcuseModel ex188 = new ExcuseModel(11, "I misread it");
         ExcuseModel ex189 = new ExcuseModel(11, "I think this is a 200 gram disc");
+        ExcuseModel ex208 = new ExcuseModel(11, "I just put a little too much IO on it");
 
         // Basketball excuses
         ExcuseModel ex190 = new ExcuseModel(12, "I got fouled");
@@ -596,6 +597,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createExcuses(ex187, db);
         createExcuses(ex188, db);
         createExcuses(ex189, db);
+        createExcuses(ex208, db);
 
         createExcuses(ex190, db);
         createExcuses(ex191, db);
