@@ -36,9 +36,7 @@ public class ShowExcuseWear extends Activity {
 
             if (mAccel > 2) {
 
-                Intent intent = new Intent(context, ExcuseMeWear.class);
-                startActivity(intent);
-
+                finish();
             }
         }
 

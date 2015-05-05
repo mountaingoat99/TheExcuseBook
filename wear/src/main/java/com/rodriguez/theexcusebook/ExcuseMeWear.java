@@ -42,6 +42,7 @@ public class ExcuseMeWear extends Activity  {
                 Intent intent = new Intent(context, ShowExcuseWear.class);
                 Bundle b = new Bundle();
                 b.putInt("sportId", sportId);
+                intent.setFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtras(b);
                 startActivity(intent);
 
@@ -70,6 +71,7 @@ public class ExcuseMeWear extends Activity  {
                         Intent intent = new Intent(context, ShowExcuseWear.class);
                         Bundle b = new Bundle();
                         b.putInt("sportId", sportId);
+                        intent.setFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.putExtras(b);
                         startActivity(intent);
                     }
