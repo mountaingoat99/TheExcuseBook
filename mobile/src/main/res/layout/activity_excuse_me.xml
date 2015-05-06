@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".ExcuseMe"
-    android:background="@mipmap/bike_book_closed">
+    android:background="@mipmap/bike_new">
 
     <TextView
         android:id="@+id/txtDefaultSport"

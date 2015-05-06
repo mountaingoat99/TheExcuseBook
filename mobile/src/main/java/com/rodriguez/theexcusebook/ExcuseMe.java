@@ -84,27 +84,27 @@ public class ExcuseMe extends ActionBarActivity {
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.excuse_me_layout);
         switch (sportId){
             case 1:
-                layout.setBackgroundResource(R.mipmap.bike_book_closed);
+                layout.setBackgroundResource(R.mipmap.bike_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 2:
-                layout.setBackgroundResource(R.mipmap.run_book_closed);
+                layout.setBackgroundResource(R.mipmap.run_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 3:
-                layout.setBackgroundResource(R.mipmap.ski_book);
+                layout.setBackgroundResource(R.mipmap.ski_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 4:
-                layout.setBackgroundResource(R.mipmap.dive_book);
+                layout.setBackgroundResource(R.mipmap.dive_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 5:
-                layout.setBackgroundResource(R.mipmap.swim_book);
+                layout.setBackgroundResource(R.mipmap.swim_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 6:
-                layout.setBackgroundResource(R.mipmap.tri_book);
+                layout.setBackgroundResource(R.mipmap.tri_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 7:
@@ -120,11 +120,11 @@ public class ExcuseMe extends ActionBarActivity {
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 10:
-                layout.setBackgroundResource(R.mipmap.golf_book);
+                layout.setBackgroundResource(R.mipmap.golf_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 11:
-                layout.setBackgroundResource(R.mipmap.frisbee_book);
+                layout.setBackgroundResource(R.mipmap.frisbee_new);
                 defaultSportName.setVisibility(View.INVISIBLE);
                 break;
             case 12:
