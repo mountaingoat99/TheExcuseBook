@@ -37,7 +37,7 @@ public class ExcuseMeWear extends Activity  {
             float delta = mAccelCurrent - mAccelLast;
             mAccel = mAccel * 0.9f + delta; // perform low-cut filter
 
-            if (mAccel > 2) {
+            if (mAccel > 3) {
 
                 Intent intent = new Intent(context, ShowExcuseWear.class);
                 Bundle b = new Bundle();
